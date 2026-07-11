@@ -694,28 +694,31 @@ namespace GenericHid
             this.trackBar1.Size = new System.Drawing.Size(413, 45);
             this.trackBar1.TabIndex = 41;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Location = new System.Drawing.Point(1033, 115);
+			this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
+			// 
+			// trackBar2
+			// 
+			this.trackBar2.Location = new System.Drawing.Point(1033, 115);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(413, 45);
             this.trackBar2.TabIndex = 42;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-            // 
-            // trackBar3
-            // 
-            this.trackBar3.Location = new System.Drawing.Point(1033, 192);
+			this.trackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
+			// 
+			// trackBar3
+			// 
+			this.trackBar3.Location = new System.Drawing.Point(1033, 192);
             this.trackBar3.Maximum = 100;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(413, 45);
             this.trackBar3.TabIndex = 43;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button1);
+			this.trackBar3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.chart1);
             this.groupBox1.Controls.Add(this.label7);
@@ -1231,6 +1234,7 @@ namespace GenericHid
 		/// Close the handle and FileStreams for a device.
 		/// </summary>
 		/// 
+		/*
 		private void CloseCommunications()
 		{
 			if (_deviceData != null)
@@ -1247,6 +1251,41 @@ namespace GenericHid
 
 			_deviceHandleObtained = false;
 		}
+		*/
+
+		private void CloseCommunications()
+		{
+			try
+			{
+				if (_deviceData != null)
+				{
+					_deviceData.Close();
+					_deviceData.Dispose();
+					_deviceData = null;
+				}
+
+				if (_hidHandle != null)
+				{
+					if (!_hidHandle.IsInvalid && !_hidHandle.IsClosed)
+					{
+						_hidHandle.Close();
+					}
+
+					_hidHandle.Dispose();
+					_hidHandle = null;
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("CloseCommunications: " + ex.Message);
+			}
+			finally
+			{
+				_deviceHandleObtained = false;
+				_transferInProgress = false;
+			}
+		}
+
 
 		///  <summary>
 		///  Search for a specific device.
@@ -1532,12 +1571,12 @@ namespace GenericHid
 				throw;
 			}
 		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Called on arrival of any device.
-        ///  Calls a routine that searches to see if the desired device is present.
-        ///  </summary>
-
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///  <summary>
+		///  Called on arrival of any device.
+		///  Calls a routine that searches to see if the desired device is present.
+		///  </summary>
+		/*
         private void DeviceAdded(object sender, EventArrivedEventArgs e)
 		{
 			try
@@ -1552,12 +1591,53 @@ namespace GenericHid
 				throw;
 			}
 		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Called if the user changes the Vendor ID or Product ID in the text box.
-        ///  </summary>
+		*/
 
-        private void DeviceHasChanged()
+		private void DeviceAdded(object sender, EventArrivedEventArgs e)
+		{
+			try
+			{
+				Debug.WriteLine("A USB device has been inserted");
+
+				BeginInvoke((MethodInvoker)delegate
+				{
+					if (_deviceHandleObtained)
+					{
+						return;
+					}
+
+					_deviceDetected = FindDeviceUsingWmi();
+
+					if (_deviceDetected)
+					{
+						_deviceHandleObtained = FindTheHid();
+						//**************************//
+						if (_deviceHandleObtained)
+						{
+							StartUsbPollingAutomatically();
+						}
+						//**************************//
+						if (_deviceHandleObtained)
+						{
+							label9.Text = "USB Device connected";
+							LstResults.Items.Add("USB device reconnected.");
+							ScrollToBottomOfListBox();
+						}
+					}
+				});
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("DeviceAdded error: " + ex.Message);
+			}
+		}
+
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///  <summary>
+		///  Called if the user changes the Vendor ID or Product ID in the text box.
+		///  </summary>
+
+		private void DeviceHasChanged()
 		{
 			try
 			{
@@ -1620,7 +1700,7 @@ namespace GenericHid
 			try
 			{
 				Debug.WriteLine("A USB device has been removed");
-
+				/*
 				_deviceDetected = FindDeviceUsingWmi();
 
 				if (!_deviceDetected)
@@ -1628,11 +1708,18 @@ namespace GenericHid
 					_deviceHandleObtained = false;
 					CloseCommunications();
 				}
+				*/
+				BeginInvoke((MethodInvoker)delegate
+				{
+					HandleUsbDisconnect("device removed");
+				});
+
 			}
 			catch (Exception ex)
 			{
-				DisplayException(Name, ex);
-				throw;
+				Debug.WriteLine("DeviceRemoved error: " + ex.Message);
+//				DisplayException(Name, ex);
+//				throw;
 			}
 		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1665,7 +1752,7 @@ namespace GenericHid
 
 					String byteValue = String.Format("{0:X2} ", buffer[count]);
 
-					LstResults.Items.Add(" " + byteValue);
+//					LstResults.Items.Add(" " + byteValue);
 
 					//  Display the received bytes in the text box.
 
@@ -1991,6 +2078,7 @@ namespace GenericHid
 			{
 				FrmMy = this;
 				Startup();
+				StartUsbPollingAutomatically();
 			}
 			catch (Exception ex)
 			{
@@ -2515,20 +2603,42 @@ namespace GenericHid
 					}
 				}
 			}
-
+			//****************************************************************************************//
+			/*
 			catch (Exception ex)
 			{
 				DisplayException(Name, ex);
 				throw;
 			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Sends a Feature report.
-        ///  Assumes report ID = 0.
-        ///  </summary>
+			*/
+			//****************************************************************************************//
+			catch (IOException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (ObjectDisposedException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (UnauthorizedAccessException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("USB read error: " + ex);
+				HandleUsbDisconnect(ex.Message);
+			}
+			//****************************************************************************************//
 
-        private void RequestToSendFeatureReport()
+		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///  <summary>
+		///  Sends a Feature report.
+		///  Assumes report ID = 0.
+		///  </summary>
+
+		private void RequestToSendFeatureReport()
 		{
 			String byteValue = null;
 
@@ -2654,7 +2764,16 @@ namespace GenericHid
                         outputReportBuffer[3] = Convert.ToByte(trackBar2.Value);
                         outputReportBuffer[4] = Convert.ToByte(trackBar3.Value);
 
-                        if (outputReportBuffer.GetUpperBound(0) > 1)
+						LstResults.Items.Add(
+						$"TX: {outputReportBuffer[0]:X2} " +
+						$"{outputReportBuffer[1]:X2} " +
+						$"{outputReportBuffer[2]:X2} " +
+						$"{outputReportBuffer[3]:X2} " +
+						$"{outputReportBuffer[4]:X2}"
+						);
+						ScrollToBottomOfListBox();
+
+						if (outputReportBuffer.GetUpperBound(0) > 1)
 						{
 							outputReportBuffer[5] = Convert.ToByte(CboByte1.SelectedIndex);
 						}
@@ -2728,19 +2847,40 @@ namespace GenericHid
 					AccessForm(FormActions.AddItemToListBox, "The HID doesn't have an Output report.");
 				}
 			}
-
+			/*
 			catch (Exception ex)
 			{
 				DisplayException(Name, ex);
 				throw;
+			}*/
+			//******************************************************************************************//
+			catch (IOException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
 			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Scroll to the bottom of the list box and trim as needed.
-        ///  </summary>
+			catch (ObjectDisposedException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (UnauthorizedAccessException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("USB write error: " + ex);
+				HandleUsbDisconnect(ex.Message);
+			}
+			//******************************************************************************************//
 
-        private void ScrollToBottomOfListBox()
+
+		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		///  <summary>
+		///  Scroll to the bottom of the list box and trim as needed.
+		///  </summary>
+
+		private void ScrollToBottomOfListBox()
 		{
 			try
 			{
@@ -2827,7 +2967,9 @@ namespace GenericHid
 					}
 					else
 					{
-						RequestToGetInputReport();
+//						RequestToGetInputReport();
+//						_sendOrGet = SendOrGet.Send;
+						RequestToGetDATAReport();
 						_sendOrGet = SendOrGet.Send;
 					}
 				}
@@ -2898,7 +3040,7 @@ namespace GenericHid
 
         private void Startup()
 		{
-			const Int32 periodicTransferInterval = 1000;
+			const Int32 periodicTransferInterval = 50;
 			try
 			{
 				_myHid = new Hid();
@@ -2992,20 +3134,43 @@ namespace GenericHid
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label1.Text = trackBar1.Value.ToString();
-//            RequestToSendOutputReport();
-        }
+			//            RequestToSendOutputReport();
+			/*
+			if (_transferInProgress)
+			{
+				return;
+			}
+
+			_transferType = TransferTypes.Interrupt;
+			RequestToSendOutputReport();
+			*/
+		}
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
-
             label2.Text = trackBar2.Value.ToString();
-        }
+			/*
+			if (_transferInProgress)
+			{
+				return;
+			}
+
+			_transferType = TransferTypes.Interrupt;
+			RequestToSendOutputReport();*/
+		}
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
-
             label3.Text = trackBar3.Value.ToString();
-        }
+			/*
+			if (_transferInProgress)
+			{
+				return;
+			}
+
+			_transferType = TransferTypes.Interrupt;
+			RequestToSendOutputReport();*/
+		}
 
         private void trackBar4_Scroll(object sender, EventArgs e)
         {
@@ -3091,7 +3256,7 @@ namespace GenericHid
             {
                 label9.Text = ("USB Device in system");
 
-                RequestToGetDATAReport();
+//                RequestToGetDATAReport();
             }
 
             if (!_deviceDetected)
@@ -3295,12 +3460,34 @@ namespace GenericHid
                 }
             }
 
-            catch (Exception ex)
+			//******************************************************************************************//
+			/*
+			catch (Exception ex)
             {
                 DisplayException(Name, ex);
                 throw;
-            }
-        }
+            }*/
+			//******************************************************************************************//
+
+			catch (IOException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (ObjectDisposedException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (UnauthorizedAccessException ex)
+			{
+				HandleUsbDisconnect(ex.Message);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("USB read error: " + ex);
+				HandleUsbDisconnect(ex.Message);
+			}
+
+		}
 
 
 
@@ -3314,8 +3501,8 @@ namespace GenericHid
 
 
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /*
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/*
         to save settings from some certain object's settings in form 
         _close
         My.Settings.volume - form3.trackBar1.Value
@@ -3324,10 +3511,10 @@ namespace GenericHid
 
 
         */
-        /// <summary>
-        /// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// </summary>
-        [STAThread]
+		/// <summary>
+		/// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// </summary>
+		[STAThread]
 		internal static void Main() { Application.Run(new FrmMain()); }
 		private static FrmMain _transDefaultFormFrmMain;
 		internal static FrmMain TransDefaultFormFrmMain
@@ -3343,5 +3530,117 @@ namespace GenericHid
 		}
 
 
-    }
+		private void TrackBar_Send_MouseUp(object sender, MouseEventArgs e)
+		{
+			LstResults.Items.Add("MouseUp entered");
+
+			if (_transferInProgress)
+			{
+				LstResults.Items.Add("MouseUp blocked: transfer already in progress");
+				ScrollToBottomOfListBox();
+				return;
+			}
+
+			if (!_deviceHandleObtained)
+			{
+				LstResults.Items.Add("MouseUp blocked: device handle not obtained");
+				ScrollToBottomOfListBox();
+				return;
+			}
+
+			if (_hidHandle == null)
+			{
+				LstResults.Items.Add("MouseUp blocked: HID handle is null");
+				ScrollToBottomOfListBox();
+				return;
+			}
+
+			if (_hidHandle.IsInvalid || _hidHandle.IsClosed)
+			{
+				LstResults.Items.Add("MouseUp blocked: HID handle is invalid or closed");
+				ScrollToBottomOfListBox();
+				return;
+			}
+
+			LstResults.Items.Add("MouseUp: sending Output report");
+
+			_transferType = TransferTypes.Interrupt;
+			RequestToSendOutputReport();
+
+			ScrollToBottomOfListBox();
+		}
+
+
+		private void HandleUsbDisconnect(string reason)
+		{
+			try
+			{
+				_deviceDetected = false;
+				_deviceHandleObtained = false;
+				_transferInProgress = false;
+
+				if (_periodicTransfersRequested)
+				{
+					PeriodicTransfersStop();
+				}
+
+				CloseCommunications();
+
+				LstResults.Items.Add("USB disconnected: " + reason);
+				ScrollToBottomOfListBox();
+
+				label9.Text = "USB Device not connected";
+
+				EnableFormControls();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("HandleUsbDisconnect: " + ex.Message);
+			}
+		}
+
+
+		/*
+		private void TrackBar_Send_MouseUp(object sender, MouseEventArgs e)
+		{
+			LstResults.Items.Add("TrackBar MouseUp: send requested");
+			ScrollToBottomOfListBox();
+
+			if (_transferInProgress)
+			{
+				return;
+			}
+
+			if (!_deviceHandleObtained || _hidHandle == null || _hidHandle.IsInvalid)
+			{
+				LstResults.Items.Add("Cannot send: HID device is not connected.");
+				ScrollToBottomOfListBox();
+				return;
+			}
+
+			_transferType = TransferTypes.Interrupt;
+			RequestToSendOutputReport();
+		}
+		*/
+
+		private void StartUsbPollingAutomatically()
+		{
+			if (!_deviceHandleObtained)
+			{
+				return;
+			}
+
+			if (_periodicTransfersRequested)
+			{
+				return;
+			}
+
+			radInputOutputInterrupt.Checked = true;
+			_sendOrGet = SendOrGet.Send;
+
+			PeriodicTransfersStart();
+		}
+
+
+	}
 }

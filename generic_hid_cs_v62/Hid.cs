@@ -382,7 +382,7 @@ namespace GenericHid
 
 				if (!hidHandle.IsInvalid && !hidHandle.IsClosed)
 				{
-					success = NativeMethods.HidD_GetInputReport(hidHandle, inputReportBuffer, inputReportBuffer.Length + 1);
+					success = NativeMethods.HidD_GetInputReport(hidHandle, inputReportBuffer, inputReportBuffer.Length);
 					Debug.Print("HidD_GetInputReport success = " + success);
 				}
 				return success;
@@ -627,7 +627,7 @@ namespace GenericHid
 				//  Returns: true on success, false on failure.
 				//  ***                    
 
-				Boolean success = NativeMethods.HidD_SetOutputReport(hidHandle, outputReportBuffer, outputReportBuffer.Length + 1);
+				Boolean success = NativeMethods.HidD_SetOutputReport(hidHandle, outputReportBuffer, outputReportBuffer.Length);
 
 				Debug.Print("HidD_SetOutputReport success = " + success);
 

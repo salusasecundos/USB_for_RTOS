@@ -22,3 +22,14 @@ J:\PROJECTS_WORK\F4\GUI\RTOS_TEST_GUI_TEST\generic_hid_cs_v62\obj\Debug\GenericH
 J:\PROJECTS_WORK\F4\GUI\RTOS_TEST_GUI_TEST\generic_hid_cs_v62\obj\Debug\GenericHid.csproj.CopyComplete
 J:\PROJECTS_WORK\F4\GUI\RTOS_TEST_GUI_TEST\generic_hid_cs_v62\obj\Debug\GenericHid.exe
 J:\PROJECTS_WORK\F4\GUI\RTOS_TEST_GUI_TEST\generic_hid_cs_v62\obj\Debug\GenericHid.pdb
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\bin\Debug\GenericHid.exe.config
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\bin\Debug\GenericHid.exe
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\bin\Debug\GenericHid.pdb
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\obj\Debug\GenericHid.FrmMain.resources
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\obj\Debug\GenericHid.Properties.Resources.resources
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\obj\Debug\GenericHid.csproj.GenerateResource.cache
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\obj\Debug\GenericHid.csproj.CoreCompileInputs.cache
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\obj\Debug\GenericHid.csproj.CopyComplete
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\obj\Debug\GenericHid.exe
+l:\PROJECTS_REPOSITORY\USB_for_RTOS\generic_hid_cs_v62\obj\Debug\GenericHid.pdb
