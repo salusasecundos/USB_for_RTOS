@@ -176,13 +176,6 @@ namespace GenericHid
 		// Required by the Windows Form Designer
 		private System.ComponentModel.IContainer components;
 		public System.Windows.Forms.ToolTip ToolTip1;
-		public System.Windows.Forms.TextBox TxtBytesReceived;
-		public System.Windows.Forms.GroupBox FraBytesReceived;
-		public System.Windows.Forms.CheckBox ChkAutoincrement;
-		public System.Windows.Forms.ComboBox CboByte1;
-		public System.Windows.Forms.ComboBox CboByte0;
-		public System.Windows.Forms.GroupBox FraBytesToSend;
-		public System.Windows.Forms.ListBox LstResults;
 		// NOTE: The following procedure is required by the Windows Form Designer
 		// It can be modified using the Windows Form Designer.
 		// Do not modify it using the code editor.   
@@ -229,7 +222,6 @@ namespace GenericHid
         private ProgressBar progressBar1;
         private TrackBar trackBar4;
         private Label label4;
-        private DataGridView dataGridView1;
         private TrackBar trackBar5;
         private Button button1;
         private System.Windows.Forms.Timer timer1;
@@ -249,17 +241,10 @@ namespace GenericHid
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.FraBytesReceived = new System.Windows.Forms.GroupBox();
-            this.TxtBytesReceived = new System.Windows.Forms.TextBox();
-            this.FraBytesToSend = new System.Windows.Forms.GroupBox();
-            this.ChkAutoincrement = new System.Windows.Forms.CheckBox();
-            this.CboByte1 = new System.Windows.Forms.ComboBox();
-            this.CboByte0 = new System.Windows.Forms.ComboBox();
-            this.LstResults = new System.Windows.Forms.ListBox();
             this.fraInputReportBufferSize = new System.Windows.Forms.GroupBox();
             this.cmdInputReportBufferSize = new System.Windows.Forms.Button();
             this.txtInputReportBufferSize = new System.Windows.Forms.TextBox();
@@ -280,6 +265,7 @@ namespace GenericHid
             this.cmdSendFeatureReport = new System.Windows.Forms.Button();
             this.fraSendAndGetContinuous = new System.Windows.Forms.GroupBox();
             this.radFeature = new System.Windows.Forms.RadioButton();
+            this.btnMonitor = new System.Windows.Forms.Button();
             this.radInputOutputControl = new System.Windows.Forms.RadioButton();
             this.radInputOutputInterrupt = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -289,8 +275,8 @@ namespace GenericHid
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -309,17 +295,13 @@ namespace GenericHid
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.trackBar4 = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.trackBar5 = new System.Windows.Forms.TrackBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
-            this.btnMonitor = new System.Windows.Forms.Button();
             this.grpUsbStatus = new System.Windows.Forms.GroupBox();
             this.lblUsbIndicator = new System.Windows.Forms.Label();
             this.lblUsbMessage = new System.Windows.Forms.Label();
             this.lblUsbStatus = new System.Windows.Forms.Label();
-            this.FraBytesReceived.SuspendLayout();
-            this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
             this.fraDeviceIdentifiers.SuspendLayout();
             this.fraInterruptTransfers.SuspendLayout();
@@ -341,111 +323,9 @@ namespace GenericHid
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
             this.grpUsbStatus.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // FraBytesReceived
-            // 
-            this.FraBytesReceived.BackColor = System.Drawing.SystemColors.Control;
-            this.FraBytesReceived.Controls.Add(this.TxtBytesReceived);
-            this.FraBytesReceived.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FraBytesReceived.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FraBytesReceived.Location = new System.Drawing.Point(16, 272);
-            this.FraBytesReceived.Name = "FraBytesReceived";
-            this.FraBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FraBytesReceived.Size = new System.Drawing.Size(112, 1043);
-            this.FraBytesReceived.TabIndex = 4;
-            this.FraBytesReceived.TabStop = false;
-            this.FraBytesReceived.Text = "Bytes Received";
-            // 
-            // TxtBytesReceived
-            // 
-            this.TxtBytesReceived.AcceptsReturn = true;
-            this.TxtBytesReceived.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtBytesReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBytesReceived.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBytesReceived.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TxtBytesReceived.Location = new System.Drawing.Point(18, 24);
-            this.TxtBytesReceived.MaxLength = 0;
-            this.TxtBytesReceived.Multiline = true;
-            this.TxtBytesReceived.Name = "TxtBytesReceived";
-            this.TxtBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TxtBytesReceived.Size = new System.Drawing.Size(72, 173);
-            this.TxtBytesReceived.TabIndex = 5;
-            this.TxtBytesReceived.Visible = false;
-            // 
-            // FraBytesToSend
-            // 
-            this.FraBytesToSend.BackColor = System.Drawing.SystemColors.Control;
-            this.FraBytesToSend.Controls.Add(this.ChkAutoincrement);
-            this.FraBytesToSend.Controls.Add(this.CboByte1);
-            this.FraBytesToSend.Controls.Add(this.CboByte0);
-            this.FraBytesToSend.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FraBytesToSend.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FraBytesToSend.Location = new System.Drawing.Point(16, 128);
-            this.FraBytesToSend.Name = "FraBytesToSend";
-            this.FraBytesToSend.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FraBytesToSend.Size = new System.Drawing.Size(160, 136);
-            this.FraBytesToSend.TabIndex = 1;
-            this.FraBytesToSend.TabStop = false;
-            this.FraBytesToSend.Text = "Bytes to Send";
-            // 
-            // ChkAutoincrement
-            // 
-            this.ChkAutoincrement.BackColor = System.Drawing.SystemColors.Control;
-            this.ChkAutoincrement.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ChkAutoincrement.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkAutoincrement.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ChkAutoincrement.Location = new System.Drawing.Point(8, 96);
-            this.ChkAutoincrement.Name = "ChkAutoincrement";
-            this.ChkAutoincrement.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ChkAutoincrement.Size = new System.Drawing.Size(201, 35);
-            this.ChkAutoincrement.TabIndex = 6;
-            this.ChkAutoincrement.Text = "Autoincrement values";
-            this.ChkAutoincrement.UseVisualStyleBackColor = false;
-            // 
-            // CboByte1
-            // 
-            this.CboByte1.BackColor = System.Drawing.SystemColors.Window;
-            this.CboByte1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CboByte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboByte1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboByte1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CboByte1.Location = new System.Drawing.Point(8, 64);
-            this.CboByte1.Name = "CboByte1";
-            this.CboByte1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CboByte1.Size = new System.Drawing.Size(101, 22);
-            this.CboByte1.TabIndex = 3;
-            // 
-            // CboByte0
-            // 
-            this.CboByte0.BackColor = System.Drawing.SystemColors.Window;
-            this.CboByte0.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CboByte0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CboByte0.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CboByte0.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CboByte0.Location = new System.Drawing.Point(8, 24);
-            this.CboByte0.Name = "CboByte0";
-            this.CboByte0.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CboByte0.Size = new System.Drawing.Size(101, 22);
-            this.CboByte0.TabIndex = 2;
-            // 
-            // LstResults
-            // 
-            this.LstResults.BackColor = System.Drawing.SystemColors.Window;
-            this.LstResults.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LstResults.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LstResults.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.LstResults.HorizontalScrollbar = true;
-            this.LstResults.ItemHeight = 14;
-            this.LstResults.Location = new System.Drawing.Point(194, 425);
-            this.LstResults.Name = "LstResults";
-            this.LstResults.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LstResults.Size = new System.Drawing.Size(461, 396);
-            this.LstResults.TabIndex = 0;
-            this.LstResults.Visible = false;
             // 
             // fraInputReportBufferSize
             // 
@@ -567,9 +447,9 @@ namespace GenericHid
             // 
             // cmdPeriodicTransfers
             // 
-            this.cmdPeriodicTransfers.Location = new System.Drawing.Point(153, 36);
+            this.cmdPeriodicTransfers.Location = new System.Drawing.Point(176, 12);
             this.cmdPeriodicTransfers.Name = "cmdPeriodicTransfers";
-            this.cmdPeriodicTransfers.Size = new System.Drawing.Size(118, 51);
+            this.cmdPeriodicTransfers.Size = new System.Drawing.Size(118, 34);
             this.cmdPeriodicTransfers.TabIndex = 16;
             this.cmdPeriodicTransfers.Text = "Start";
             this.cmdPeriodicTransfers.UseVisualStyleBackColor = true;
@@ -636,15 +516,16 @@ namespace GenericHid
             // 
             this.fraSendAndGetContinuous.BackColor = System.Drawing.SystemColors.Control;
             this.fraSendAndGetContinuous.Controls.Add(this.radFeature);
+            this.fraSendAndGetContinuous.Controls.Add(this.btnMonitor);
             this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputControl);
             this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputInterrupt);
             this.fraSendAndGetContinuous.Controls.Add(this.cmdPeriodicTransfers);
             this.fraSendAndGetContinuous.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fraSendAndGetContinuous.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(194, 296);
+            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(35, 186);
             this.fraSendAndGetContinuous.Name = "fraSendAndGetContinuous";
             this.fraSendAndGetContinuous.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraSendAndGetContinuous.Size = new System.Drawing.Size(295, 112);
+            this.fraSendAndGetContinuous.Size = new System.Drawing.Size(300, 112);
             this.fraSendAndGetContinuous.TabIndex = 17;
             this.fraSendAndGetContinuous.TabStop = false;
             this.fraSendAndGetContinuous.Text = "Send and Get Continuous";
@@ -660,6 +541,16 @@ namespace GenericHid
             this.radFeature.Text = "Feature";
             this.radFeature.UseVisualStyleBackColor = true;
             this.radFeature.CheckedChanged += new System.EventHandler(this.radFeature_CheckedChanged);
+            // 
+            // btnMonitor
+            // 
+            this.btnMonitor.Location = new System.Drawing.Point(176, 52);
+            this.btnMonitor.Name = "btnMonitor";
+            this.btnMonitor.Size = new System.Drawing.Size(119, 30);
+            this.btnMonitor.TabIndex = 64;
+            this.btnMonitor.Text = "USB Monitor";
+            this.btnMonitor.UseVisualStyleBackColor = true;
+            this.btnMonitor.Click += new System.EventHandler(this.btnMonitor_Click);
             // 
             // radInputOutputControl
             // 
@@ -733,21 +624,17 @@ namespace GenericHid
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.chart1);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(877, 378);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(597, 530);
+            this.groupBox1.Size = new System.Drawing.Size(597, 413);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driver";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(9, 142);
+            this.button1.Location = new System.Drawing.Point(6, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 63;
@@ -755,86 +642,93 @@ namespace GenericHid
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 14);
-            this.label8.TabIndex = 67;
-            this.label8.Text = "label8";
-            // 
             // chart1
             // 
-            chartArea4.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea4.AxisX.ScaleView.SmallScrollMinSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea4.AxisX.ScaleView.SmallScrollSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(6, 171);
+            chartArea1.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea1.AxisX.ScaleView.SmallScrollMinSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea1.AxisX.ScaleView.SmallScrollSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(6, 48);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(585, 353);
             this.chart1.TabIndex = 62;
             this.chart1.Text = "chart1";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(392, 438);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 45);
+            this.label8.TabIndex = 67;
+            this.label8.Text = "label8";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 44);
+            this.label7.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(392, 393);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 14);
+            this.label7.Size = new System.Drawing.Size(124, 45);
             this.label7.TabIndex = 66;
             this.label7.Text = "label7";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 30);
+            this.label6.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(392, 335);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 14);
+            this.label6.Size = new System.Drawing.Size(124, 45);
             this.label6.TabIndex = 65;
             this.label6.Text = "label6";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(381, 286);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 14);
+            this.label5.Size = new System.Drawing.Size(124, 45);
             this.label5.TabIndex = 64;
             this.label5.Text = "label5";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1452, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 14);
+            this.label1.Size = new System.Drawing.Size(30, 32);
             this.label1.TabIndex = 46;
             this.label1.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(1452, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 14);
+            this.label2.Size = new System.Drawing.Size(30, 32);
             this.label2.TabIndex = 47;
             this.label2.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1452, 200);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 14);
+            this.label3.Size = new System.Drawing.Size(30, 32);
             this.label3.TabIndex = 48;
             this.label3.Text = "0";
             // 
@@ -922,27 +816,20 @@ namespace GenericHid
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(1452, 260);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 14);
+            this.label4.Size = new System.Drawing.Size(30, 32);
             this.label4.TabIndex = 60;
             this.label4.Text = "0";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(877, 914);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(467, 276);
-            this.dataGridView1.TabIndex = 61;
-            // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(1480, 530);
+            this.trackBar5.Location = new System.Drawing.Point(1480, 378);
             this.trackBar5.Maximum = 100;
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar5.Size = new System.Drawing.Size(45, 372);
+            this.trackBar5.Size = new System.Drawing.Size(45, 413);
             this.trackBar5.TabIndex = 62;
             this.trackBar5.Value = 15;
             this.trackBar5.Scroll += new System.EventHandler(this.trackBar5_Scroll);
@@ -961,25 +848,16 @@ namespace GenericHid
             this.label9.TabIndex = 63;
             this.label9.Text = "USB";
             // 
-            // btnMonitor
-            // 
-            this.btnMonitor.Location = new System.Drawing.Point(534, 332);
-            this.btnMonitor.Name = "btnMonitor";
-            this.btnMonitor.Size = new System.Drawing.Size(154, 58);
-            this.btnMonitor.TabIndex = 64;
-            this.btnMonitor.Text = "USB Monitor";
-            this.btnMonitor.UseVisualStyleBackColor = true;
-            this.btnMonitor.Click += new System.EventHandler(this.btnMonitor_Click);
-            // 
             // grpUsbStatus
             // 
             this.grpUsbStatus.Controls.Add(this.lblUsbIndicator);
             this.grpUsbStatus.Controls.Add(this.lblUsbMessage);
             this.grpUsbStatus.Controls.Add(this.label9);
             this.grpUsbStatus.Controls.Add(this.lblUsbStatus);
-            this.grpUsbStatus.Location = new System.Drawing.Point(194, 849);
+            this.grpUsbStatus.Controls.Add(this.fraSendAndGetContinuous);
+            this.grpUsbStatus.Location = new System.Drawing.Point(16, 286);
             this.grpUsbStatus.Name = "grpUsbStatus";
-            this.grpUsbStatus.Size = new System.Drawing.Size(461, 334);
+            this.grpUsbStatus.Size = new System.Drawing.Size(346, 313);
             this.grpUsbStatus.TabIndex = 65;
             this.grpUsbStatus.TabStop = false;
             this.grpUsbStatus.Text = "USB Status";
@@ -1012,14 +890,16 @@ namespace GenericHid
             // 
             // FrmMain
             // 
-            this.ClientSize = new System.Drawing.Size(1633, 1327);
+            this.ClientSize = new System.Drawing.Size(1633, 811);
             this.Controls.Add(this.grpUsbStatus);
-            this.Controls.Add(this.btnMonitor);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.trackBar5);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.trackBar4);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.numericUpDown10);
             this.Controls.Add(this.numericUpDown9);
             this.Controls.Add(this.numericUpDown8);
@@ -1038,15 +918,11 @@ namespace GenericHid
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.fraSendAndGetContinuous);
             this.Controls.Add(this.fraControlTransfers);
             this.Controls.Add(this.fraInterruptTransfers);
             this.Controls.Add(this.cmdFindDevice);
             this.Controls.Add(this.fraDeviceIdentifiers);
             this.Controls.Add(this.fraInputReportBufferSize);
-            this.Controls.Add(this.FraBytesReceived);
-            this.Controls.Add(this.FraBytesToSend);
-            this.Controls.Add(this.LstResults);
             this.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Location = new System.Drawing.Point(21, 28);
             this.Name = "FrmMain";
@@ -1054,9 +930,6 @@ namespace GenericHid
             this.Text = "Generic HID Tester";
             this.Closed += new System.EventHandler(this.frmMain_Closed);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.FraBytesReceived.ResumeLayout(false);
-            this.FraBytesReceived.PerformLayout();
-            this.FraBytesToSend.ResumeLayout(false);
             this.fraInputReportBufferSize.ResumeLayout(false);
             this.fraInputReportBufferSize.PerformLayout();
             this.fraDeviceIdentifiers.ResumeLayout(false);
@@ -1070,7 +943,6 @@ namespace GenericHid
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
@@ -1082,7 +954,6 @@ namespace GenericHid
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
             this.grpUsbStatus.ResumeLayout(false);
             this.grpUsbStatus.PerformLayout();
@@ -1133,12 +1004,12 @@ namespace GenericHid
 
 		private enum FormActions
 		{
-			AddItemToListBox,
+//			AddItemToListBox,
 			DisableInputReportBufferSize,
 			EnableGetInputReportInterruptTransfer,
 			EnableInputReportBufferSize,
 			EnableSendOutputReportInterrupt,
-			ScrollToBottomOfListBox,
+//			ScrollToBottomOfListBox,
 			SetInputReportBufferSize
 		}
 
@@ -1202,10 +1073,10 @@ namespace GenericHid
 
 				switch (action)
 				{
-					case FormActions.AddItemToListBox:
+//					case FormActions.AddItemToListBox:
 
-						LstResults.Items.Add(formText);
-						break;
+//						LstResults.Items.Add(formText);
+//						break;
 
 					case FormActions.DisableInputReportBufferSize:
 
@@ -1227,10 +1098,10 @@ namespace GenericHid
 						cmdSendOutputReportInterrupt.Enabled = true;
 						break;
 
-					case FormActions.ScrollToBottomOfListBox:
+//					case FormActions.ScrollToBottomOfListBox:
 
-						LstResults.SelectedIndex = LstResults.Items.Count - 1;
-						break;
+//						LstResults.SelectedIndex = LstResults.Items.Count - 1;
+//						break;
 
 					case FormActions.SetInputReportBufferSize:
 
@@ -1923,20 +1794,6 @@ namespace GenericHid
 						_usbDeviceId = Convert.ToString(queryObj["DeviceID"]);
 
 						_usbClassGuid = Convert.ToString(queryObj["ClassGUID"]);
-						/*
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "--------");
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "My device found (WMI):");
-
-						// Display device properties.
-
-						foreach (WmiDeviceProperties wmiDeviceProperty in Enum.GetValues(typeof(WmiDeviceProperties)))
-						{
-							MyMarshalDataToForm(FormActions.AddItemToListBox, (wmiDeviceProperty.ToString() + ": " + queryObj[wmiDeviceProperty.ToString()]));
-							Debug.WriteLine(wmiDeviceProperty.ToString() + ": {0}", queryObj[wmiDeviceProperty.ToString()]);
-						}
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "--------");
-						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
-						*/
 
 						AddUsbEvent("USB device found by WMI");
 
@@ -2048,16 +1905,8 @@ namespace GenericHid
 									Debug.WriteLine("  Handle obtained to my device");
 
 									//  Display the information in form's list box.
-									/*
-									MyMarshalDataToForm(FormActions.AddItemToListBox, "Handle obtained to my device:");
-									MyMarshalDataToForm(FormActions.AddItemToListBox, "  Vendor ID= " + Convert.ToString(_myHid.DeviceAttributes.VendorID, 16));
-									MyMarshalDataToForm(FormActions.AddItemToListBox, "  Product ID = " + Convert.ToString(_myHid.DeviceAttributes.ProductID, 16));
-									*/
 									AddUsbEvent("HID handle opened, VID=" +	_myVendorId.ToString("X4") + " PID=" + _myProductId.ToString("X4"));
-//									MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
-
 									_deviceHandleObtained = true;
-
 									SetUsbStatus(
 										"USB device connected",
 										"VID: " + _myVendorId.ToString("X4") +
@@ -2094,8 +1943,7 @@ namespace GenericHid
 
 				if (_deviceHandleObtained)
 				{
-					//  The device was detected.
-					//  Learn the capabilities of the device.
+					//  The device was detected. Learn the capabilities of the device.
 
 					_myHid.Capabilities = _myHid.GetDeviceCapabilities(_hidHandle);
 
@@ -2117,10 +1965,12 @@ namespace GenericHid
 
 					if (_hidHandle.IsInvalid)
 					{
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "The device is a system " + _hidUsage + ".");
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "Windows 2000 and later obtain exclusive access to Input and Output reports for this devices.");
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "Windows 8 also obtains exclusive access to Feature reports.");
-						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+						AddUsbEvent(
+							"Unable to open HID for read/write access. HID usage: " +
+							_hidUsage);
+
+						Debug.WriteLine(
+							"Windows has exclusive access to this HID device.");
 					}
 					else
 					{
@@ -2146,15 +1996,11 @@ namespace GenericHid
 				}
 				else
 				{
-					MyMarshalDataToForm(FormActions.AddItemToListBox, "Device not found.");
-					SetUsbStatus(
-                        "USB device not connected",
-                        "Waiting for device...",
-                        indicatorColor: Color.DimGray);
+					Debug.WriteLine("HID device not found");
+					SetUsbStatus("USB device not connected", "Waiting for device...", indicatorColor: Color.DimGray);
 
 					MyMarshalDataToForm(FormActions.DisableInputReportBufferSize, "");
 					EnableFormControls();
-					MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
 				}
 				return _deviceHandleObtained;
 			}
@@ -2215,39 +2061,6 @@ namespace GenericHid
 
         }
 
-		private void GetBytesToSend()
-		{
-			try
-			{
-				//  Get the bytes to send in a report from the combo boxes.
-				//  Increment the values if the autoincrement check box is selected.
-
-				if (ChkAutoincrement.Checked)
-				{
-					if (CboByte0.SelectedIndex < 255)
-					{
-						CboByte0.SelectedIndex = CboByte0.SelectedIndex + 1;
-					}
-					else
-					{
-						CboByte0.SelectedIndex = 0;
-					}
-					if (CboByte1.SelectedIndex < 255)
-					{
-						CboByte1.SelectedIndex = CboByte1.SelectedIndex + 1;
-					}
-					else
-					{
-						CboByte1.SelectedIndex = 0;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
         ///  Find and display the number of Input buffers
@@ -2313,19 +2126,13 @@ namespace GenericHid
 				for (count = 0; count <= 255; count++)
 				{
 					String byteValue = String.Format("{0:X2} ", count);
-					FrmMy.CboByte0.Items.Insert(count, byteValue);
-					FrmMy.CboByte1.Items.Insert(count, byteValue);
 				}
 
 				//  Select a default value for each box
 
-				FrmMy.CboByte0.SelectedIndex = 0;
-				FrmMy.CboByte1.SelectedIndex = 128;
 				FrmMy.radInputOutputInterrupt.Checked = true;
 
 				//  Check the autoincrement box to increment the values each time a report is sent.
-
-				ChkAutoincrement.CheckState = CheckState.Checked;
 
 				//  Don't allow the user to select an input report buffer size until there is
 				//  a handle to a HID.
@@ -2333,10 +2140,6 @@ namespace GenericHid
 				cmdInputReportBufferSize.Focus();
 				cmdInputReportBufferSize.Enabled = false;
 
-//				LstResults.Items.Add("For a more detailed event log, view debug statements in Visual Studio's Output window:");
-//				LstResults.Items.Add("Click Build > Configuration Manager > Active Solution Configuration > Debug > Close.");
-//				LstResults.Items.Add("Then click View > Output.");
-//				LstResults.Items.Add("");
 			}
 			catch (Exception ex)
 			{
@@ -2378,24 +2181,6 @@ namespace GenericHid
 		/// Timeout if read via interrupt transfer doesn't return.
 		/// </summary>
 
-		/*        private void OnReadTimeout()
-				{
-					try
-					{
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read a report timed out.");
-						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
-						CloseCommunications();
-						MyMarshalDataToForm(FormActions.EnableGetInputReportInterruptTransfer, "");
-						_transferInProgress = false;
-						_sendOrGet = SendOrGet.Send;
-					}
-					catch (Exception ex)
-					{
-						DisplayException(Name, ex);
-						throw;
-					}
-				}
-		*/
 		private void OnReadTimeout()
 		{
 			try
@@ -2422,25 +2207,28 @@ namespace GenericHid
 		{
 			try
 			{
-				MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to write a report timed out.");
-				MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+				AddUsbEvent("Write timeout");
+
 				CloseCommunications();
-				MyMarshalDataToForm(FormActions.EnableSendOutputReportInterrupt, "");
+
+				MyMarshalDataToForm(
+					FormActions.EnableSendOutputReportInterrupt,
+					"");
+
 				_transferInProgress = false;
 				_sendOrGet = SendOrGet.Get;
 			}
 			catch (Exception ex)
 			{
-				DisplayException(Name, ex);
-				throw;
+				Debug.WriteLine("OnWriteTimeout: " + ex.Message);
 			}
 		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Alternat sending and getting a report.
-        /// </summary>
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// <summary>
+		/// Alternat sending and getting a report.
+		/// </summary>
 
-        private void PeriodicTransfers()
+		private void PeriodicTransfers()
 		{
 			try
 			{
@@ -2602,15 +2390,11 @@ namespace GenericHid
 						else
 						{
 							CloseCommunications();
-//							MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read a Feature report failed.");
-//							ScrollToBottomOfListBox();
 							AddUsbEvent("Failed to read Feature report");
 						}
 					}
 					else
 					{
-//						MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have a Feature report.");
-//						ScrollToBottomOfListBox();
 						AddUsbEvent("HID has no Feature report");
 					}
 				}
@@ -2743,15 +2527,11 @@ namespace GenericHid
 						}
 						else
 						{
-//							MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
-//							MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
 							AddUsbEvent("HID has no Input report");
 						}
 					}
 					else
 					{
-//						MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
-//						MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to write an Output report or read an Input report was made.");
 						AddUsbEvent("Invalid HID handle");
 					}
 
@@ -2762,21 +2542,10 @@ namespace GenericHid
 					else
 					{
 						CloseCommunications();
-//						MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-//						ScrollToBottomOfListBox();
 						AddUsbEvent("Failed to read Input report");
 					}
 				}
 			}
-			//****************************************************************************************//
-			/*
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-			*/
-			//****************************************************************************************//
 			catch (OperationCanceledException)
 			{
 				HandleUsbDisconnect("Read timeout");
@@ -2798,7 +2567,6 @@ namespace GenericHid
 				Debug.WriteLine("USB read error: " + ex);
 				HandleUsbDisconnect(ex.Message);
 			}
-			//****************************************************************************************//
 
 		}
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2825,7 +2593,7 @@ namespace GenericHid
 
 				if (_deviceHandleObtained)
 				{
-					GetBytesToSend();
+//					GetBytesToSend();
 
 					if ((_myHid.Capabilities.FeatureReportByteLength > 0))
 					{
@@ -2841,13 +2609,15 @@ namespace GenericHid
 						//  Store the report data following the report ID.
 						//  Use the data in the combo boxes on the form.
 
-						outFeatureReportBuffer[1] = Convert.ToByte(CboByte0.SelectedIndex);
-
-						if (outFeatureReportBuffer.GetUpperBound(0) > 1)
+						if (outFeatureReportBuffer.Length > 1)
 						{
-							outFeatureReportBuffer[2] = Convert.ToByte(CboByte1.SelectedIndex);
+							outFeatureReportBuffer[1] = 0;
 						}
 
+						if (outFeatureReportBuffer.Length > 2)
+						{
+							outFeatureReportBuffer[2] = 0;
+						}
 						//  Write a report to the device
 
 						Boolean success = _myHid.SendFeatureReport(_hidHandle, outFeatureReportBuffer);
@@ -2859,23 +2629,18 @@ namespace GenericHid
 						else
 						{
 							CloseCommunications();
-//							AccessForm(FormActions.AddItemToListBox, "The attempt to send a Feature report failed.");
-//							ScrollToBottomOfListBox();
 							AddUsbEvent("Failed to send Feature report");
 						}
 					}
 
 					else
 					{
-//						AccessForm(FormActions.AddItemToListBox, "The HID doesn't have a Feature report.");
-//						ScrollToBottomOfListBox();
 						AddUsbEvent("HID has no Feature report");
 					}
 
 				}
 				_transferInProgress = false;
 				cmdSendFeatureReport.Enabled = true;
-//				ScrollToBottomOfListBox();
 
 			}
 			catch (Exception ex)
@@ -2907,7 +2672,7 @@ namespace GenericHid
 
 				if (_deviceHandleObtained)
 				{
-					GetBytesToSend();
+//					GetBytesToSend();
 				}
 				//  Don't attempt to exchange reports if valid handles aren't available
 				//  (as for a mouse or keyboard.)
@@ -2929,24 +2694,14 @@ namespace GenericHid
 						//  Store the report data following the report ID.
 						//  Use the data in the combo boxes on the form.
                         ////////////////////////////////////////////////////////////////////////////////////////////////////-------------------------------------------------
-						//outputReportBuffer[1] = Convert.ToByte(CboByte0.SelectedIndex);
                         outputReportBuffer[1] = Convert.ToByte(numericUpDown1.Value);
                         outputReportBuffer[2] = Convert.ToByte(trackBar1.Value);
                         outputReportBuffer[3] = Convert.ToByte(trackBar2.Value);
                         outputReportBuffer[4] = Convert.ToByte(trackBar3.Value);
-						/*
-						LstResults.Items.Add(
-						$"TX: {outputReportBuffer[0]:X2} " +
-						$"{outputReportBuffer[1]:X2} " +
-						$"{outputReportBuffer[2]:X2} " +
-						$"{outputReportBuffer[3]:X2} " +
-						$"{outputReportBuffer[4]:X2}"
-						);
-						ScrollToBottomOfListBox();
-						*/
-						if (outputReportBuffer.GetUpperBound(0) > 1)
+
+						if (outputReportBuffer.Length > 5)
 						{
-							outputReportBuffer[5] = Convert.ToByte(CboByte1.SelectedIndex);
+							outputReportBuffer[5] = 0;
 						}
 
 						if (_monitorForm != null && !_monitorForm.IsDisposed)
@@ -2978,35 +2733,6 @@ namespace GenericHid
 							_transferInProgress = true;
 
 							// The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
-							//////////////////////////////////////////////////////////////////////////////////////////
-							/*
-							var cts = new CancellationTokenSource();
-
-							// Create a delegate to execute on a timeout.
-
-							Action onWriteTimeoutAction = OnWriteTimeout;
-
-							// Cancel the read if it hasn't completed after a timeout.
-
-							cts.CancelAfter(writeTimeout);
-
-							// Specify the function to call on a timeout.
-
-							cts.Token.Register(onWriteTimeoutAction);
-
-							// Send an Output report and wait for completion or timeout.
-
-							success = await _myHid.SendOutputReportViaInterruptTransfer(_deviceData, _hidHandle, outputReportBuffer, cts);
-
-							// Get here only if the operation completes without a timeout.
-
-							_transferInProgress = false;
-							cmdSendOutputReportInterrupt.Enabled = true;
-
-							// Dispose to stop the timeout timer.
-
-							cts.Dispose();
-							*/
 							using (var cts = new CancellationTokenSource())
 							{
 								cts.CancelAfter(writeTimeout);
@@ -3021,7 +2747,6 @@ namespace GenericHid
 
 							_transferInProgress = false;
 							cmdSendOutputReportInterrupt.Enabled = true;
-							//////////////////////////////////////////////////////////////////////////////////////////
 						}
 						if (success)
 						{
@@ -3030,25 +2755,16 @@ namespace GenericHid
 						else
 						{
 							CloseCommunications();
-							//                        MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-//							AddUsbEvent("Failed to read Input report");
 							AddUsbEvent("Failed to send Output report");
-							//                        ScrollToBottomOfListBox();
 						}
 					}
 				}
 				else
 				{
-					AccessForm(FormActions.AddItemToListBox, "The HID doesn't have an Output report.");
+					AddUsbEvent("HID has no Output report");
 				}
 			}
-			/*
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}*/
-			//******************************************************************************************//
+
 			catch (OperationCanceledException)
 			{
 				HandleUsbDisconnect("Write timeout");
@@ -3074,7 +2790,7 @@ namespace GenericHid
 		///  <summary>
 		///  Scroll to the bottom of the list box and trim as needed.
 		///  </summary>
-
+		/*
 		private void ScrollToBottomOfListBox()
 		{
 			try
@@ -3098,6 +2814,7 @@ namespace GenericHid
 				throw;
 			}
 		}
+		*/
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Request to send or get a Feature report.
@@ -3583,32 +3300,6 @@ namespace GenericHid
 									//  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
 
 									// Create a delegate to execute on a timeout.
-									///////////////////////////////////////////////////////////////////////////////////////////////////////
-									/*
-                                    Action onReadTimeoutAction = OnReadTimeout;
-
-                                    // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
-
-                                    var cts = new CancellationTokenSource();
-
-                                    // Cancel the read if it hasn't completed after a timeout.
-
-                                    cts.CancelAfter(readTimeout);
-
-                                    // Specify the function to call on a timeout.
-
-                                    cts.Token.Register(onReadTimeoutAction);
-
-                                    // Stops waiting when data is available or on timeout:
-
-                                    Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
-
-                                    // Arrive here only if the operation completed.
-
-                                    // Dispose to stop the timeout timer. 
-
-                                    cts.Dispose();*/
-									///////////////////////////////////////////////////////////////////////////////////////////////////////
 									Int32 bytesRead;
 
 									using (var cts = new CancellationTokenSource())
@@ -3638,15 +3329,13 @@ namespace GenericHid
                         }
                         else
                         {
-                            MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
-                            MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
-                        }
+							AddUsbEvent("HID has no Input report");
+						}
                     }
                     else
                     {
-                        MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
-                        MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to write an Output report or read an Input report was made.");
-                    }
+						AddUsbEvent("Invalid HID handle");
+					}
 
                     if (success)
                     {
@@ -3676,21 +3365,10 @@ namespace GenericHid
                     else
                     {
                         CloseCommunications();
-//                        MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
 						AddUsbEvent("Failed to read Input report");
-//                        ScrollToBottomOfListBox();
 					}
                 }
             }
-
-			//******************************************************************************************//
-			/*
-			catch (Exception ex)
-            {
-                DisplayException(Name, ex);
-                throw;
-            }*/
-			//******************************************************************************************//
 
 			catch (OperationCanceledException)
 			{
