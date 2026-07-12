@@ -176,30 +176,6 @@ namespace GenericHid
 		// Required by the Windows Form Designer
 		private System.ComponentModel.IContainer components;
 		public System.Windows.Forms.ToolTip ToolTip1;
-		// NOTE: The following procedure is required by the Windows Form Designer
-		// It can be modified using the Windows Form Designer.
-		// Do not modify it using the code editor.   
-		internal System.Windows.Forms.GroupBox fraInputReportBufferSize;
-		internal System.Windows.Forms.TextBox txtInputReportBufferSize;
-		internal System.Windows.Forms.Button cmdInputReportBufferSize;
-		internal System.Windows.Forms.GroupBox fraDeviceIdentifiers;
-		internal System.Windows.Forms.Label lblVendorID;
-		internal System.Windows.Forms.TextBox txtVendorID;
-		internal System.Windows.Forms.Label lblProductID;
-		internal System.Windows.Forms.TextBox txtProductID;
-		internal System.Windows.Forms.Button cmdFindDevice;
-		private Button cmdGetInputReportInterrupt;
-		public GroupBox fraInterruptTransfers;
-		private Button cmdSendOutputReportControl;
-		private Button cmdGetInputReportControl;
-		public GroupBox fraControlTransfers;
-		private Button cmdGetFeatureReport;
-		private Button cmdSendFeatureReport;
-		private Button cmdPeriodicTransfers;
-		public GroupBox fraSendAndGetContinuous;
-		private RadioButton radFeature;
-		private RadioButton radInputOutputControl;
-		private RadioButton radInputOutputInterrupt;
         private ComboBox comboBox1;
         private NumericUpDown numericUpDown1;
         private TrackBar trackBar1;
@@ -235,7 +211,6 @@ namespace GenericHid
         private Label lblUsbIndicator;
         private Label lblUsbMessage;
         private Label lblUsbStatus;
-        private Button cmdSendOutputReportInterrupt;
 
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
@@ -245,29 +220,7 @@ namespace GenericHid
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.fraInputReportBufferSize = new System.Windows.Forms.GroupBox();
-            this.cmdInputReportBufferSize = new System.Windows.Forms.Button();
-            this.txtInputReportBufferSize = new System.Windows.Forms.TextBox();
-            this.fraDeviceIdentifiers = new System.Windows.Forms.GroupBox();
-            this.txtProductID = new System.Windows.Forms.TextBox();
-            this.lblProductID = new System.Windows.Forms.Label();
-            this.txtVendorID = new System.Windows.Forms.TextBox();
-            this.lblVendorID = new System.Windows.Forms.Label();
-            this.cmdFindDevice = new System.Windows.Forms.Button();
-            this.cmdSendOutputReportInterrupt = new System.Windows.Forms.Button();
-            this.cmdGetInputReportInterrupt = new System.Windows.Forms.Button();
-            this.fraInterruptTransfers = new System.Windows.Forms.GroupBox();
-            this.cmdPeriodicTransfers = new System.Windows.Forms.Button();
-            this.cmdSendOutputReportControl = new System.Windows.Forms.Button();
-            this.cmdGetInputReportControl = new System.Windows.Forms.Button();
-            this.fraControlTransfers = new System.Windows.Forms.GroupBox();
-            this.cmdGetFeatureReport = new System.Windows.Forms.Button();
-            this.cmdSendFeatureReport = new System.Windows.Forms.Button();
-            this.fraSendAndGetContinuous = new System.Windows.Forms.GroupBox();
-            this.radFeature = new System.Windows.Forms.RadioButton();
             this.btnMonitor = new System.Windows.Forms.Button();
-            this.radInputOutputControl = new System.Windows.Forms.RadioButton();
-            this.radInputOutputInterrupt = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
@@ -302,11 +255,6 @@ namespace GenericHid
             this.lblUsbIndicator = new System.Windows.Forms.Label();
             this.lblUsbMessage = new System.Windows.Forms.Label();
             this.lblUsbStatus = new System.Windows.Forms.Label();
-            this.fraInputReportBufferSize.SuspendLayout();
-            this.fraDeviceIdentifiers.SuspendLayout();
-            this.fraInterruptTransfers.SuspendLayout();
-            this.fraControlTransfers.SuspendLayout();
-            this.fraSendAndGetContinuous.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -327,254 +275,15 @@ namespace GenericHid
             this.grpUsbStatus.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fraInputReportBufferSize
-            // 
-            this.fraInputReportBufferSize.Controls.Add(this.cmdInputReportBufferSize);
-            this.fraInputReportBufferSize.Controls.Add(this.txtInputReportBufferSize);
-            this.fraInputReportBufferSize.Location = new System.Drawing.Point(248, 16);
-            this.fraInputReportBufferSize.Name = "fraInputReportBufferSize";
-            this.fraInputReportBufferSize.Size = new System.Drawing.Size(208, 96);
-            this.fraInputReportBufferSize.TabIndex = 9;
-            this.fraInputReportBufferSize.TabStop = false;
-            this.fraInputReportBufferSize.Text = "Input Report Buffer Size";
-            // 
-            // cmdInputReportBufferSize
-            // 
-            this.cmdInputReportBufferSize.Location = new System.Drawing.Point(96, 32);
-            this.cmdInputReportBufferSize.Name = "cmdInputReportBufferSize";
-            this.cmdInputReportBufferSize.Size = new System.Drawing.Size(96, 56);
-            this.cmdInputReportBufferSize.TabIndex = 1;
-            this.cmdInputReportBufferSize.Text = "Change Buffer Size";
-            this.cmdInputReportBufferSize.Click += new System.EventHandler(this.cmdInputReportBufferSize_Click);
-            // 
-            // txtInputReportBufferSize
-            // 
-            this.txtInputReportBufferSize.Location = new System.Drawing.Point(16, 40);
-            this.txtInputReportBufferSize.Name = "txtInputReportBufferSize";
-            this.txtInputReportBufferSize.Size = new System.Drawing.Size(56, 20);
-            this.txtInputReportBufferSize.TabIndex = 0;
-            // 
-            // fraDeviceIdentifiers
-            // 
-            this.fraDeviceIdentifiers.Controls.Add(this.txtProductID);
-            this.fraDeviceIdentifiers.Controls.Add(this.lblProductID);
-            this.fraDeviceIdentifiers.Controls.Add(this.txtVendorID);
-            this.fraDeviceIdentifiers.Controls.Add(this.lblVendorID);
-            this.fraDeviceIdentifiers.Location = new System.Drawing.Point(16, 16);
-            this.fraDeviceIdentifiers.Name = "fraDeviceIdentifiers";
-            this.fraDeviceIdentifiers.Size = new System.Drawing.Size(208, 96);
-            this.fraDeviceIdentifiers.TabIndex = 10;
-            this.fraDeviceIdentifiers.TabStop = false;
-            this.fraDeviceIdentifiers.Text = "Device Identifiers";
-            // 
-            // txtProductID
-            // 
-            this.txtProductID.Location = new System.Drawing.Point(120, 56);
-            this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(72, 20);
-            this.txtProductID.TabIndex = 3;
-            this.txtProductID.Text = "1299";
-            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
-            // 
-            // lblProductID
-            // 
-            this.lblProductID.Location = new System.Drawing.Point(16, 56);
-            this.lblProductID.Name = "lblProductID";
-            this.lblProductID.Size = new System.Drawing.Size(112, 23);
-            this.lblProductID.TabIndex = 2;
-            this.lblProductID.Text = "Product ID (hex):";
-            // 
-            // txtVendorID
-            // 
-            this.txtVendorID.Location = new System.Drawing.Point(120, 24);
-            this.txtVendorID.Name = "txtVendorID";
-            this.txtVendorID.Size = new System.Drawing.Size(72, 20);
-            this.txtVendorID.TabIndex = 1;
-            this.txtVendorID.Text = "0925";
-            this.txtVendorID.TextChanged += new System.EventHandler(this.txtVendorID_TextChanged);
-            // 
-            // lblVendorID
-            // 
-            this.lblVendorID.Location = new System.Drawing.Point(16, 24);
-            this.lblVendorID.Name = "lblVendorID";
-            this.lblVendorID.Size = new System.Drawing.Size(112, 23);
-            this.lblVendorID.TabIndex = 0;
-            this.lblVendorID.Text = "Vendor ID (hex):";
-            // 
-            // cmdFindDevice
-            // 
-            this.cmdFindDevice.Location = new System.Drawing.Point(483, 37);
-            this.cmdFindDevice.Name = "cmdFindDevice";
-            this.cmdFindDevice.Size = new System.Drawing.Size(136, 55);
-            this.cmdFindDevice.TabIndex = 11;
-            this.cmdFindDevice.Text = "Find My Device";
-            this.cmdFindDevice.Click += new System.EventHandler(this.cmdFindDevice_Click);
-            // 
-            // cmdSendOutputReportInterrupt
-            // 
-            this.cmdSendOutputReportInterrupt.Location = new System.Drawing.Point(10, 27);
-            this.cmdSendOutputReportInterrupt.Name = "cmdSendOutputReportInterrupt";
-            this.cmdSendOutputReportInterrupt.Size = new System.Drawing.Size(118, 50);
-            this.cmdSendOutputReportInterrupt.TabIndex = 12;
-            this.cmdSendOutputReportInterrupt.Text = "Send Output Report";
-            this.cmdSendOutputReportInterrupt.UseVisualStyleBackColor = true;
-            this.cmdSendOutputReportInterrupt.Click += new System.EventHandler(this.cmdSendOutputReportInterrupt_Click);
-            // 
-            // cmdGetInputReportInterrupt
-            // 
-            this.cmdGetInputReportInterrupt.Location = new System.Drawing.Point(10, 83);
-            this.cmdGetInputReportInterrupt.Name = "cmdGetInputReportInterrupt";
-            this.cmdGetInputReportInterrupt.Size = new System.Drawing.Size(118, 50);
-            this.cmdGetInputReportInterrupt.TabIndex = 13;
-            this.cmdGetInputReportInterrupt.Text = "Get Input Report";
-            this.cmdGetInputReportInterrupt.UseVisualStyleBackColor = true;
-            this.cmdGetInputReportInterrupt.Click += new System.EventHandler(this.cmdGetInputReportInterrupt_Click);
-            // 
-            // fraInterruptTransfers
-            // 
-            this.fraInterruptTransfers.BackColor = System.Drawing.SystemColors.Control;
-            this.fraInterruptTransfers.Controls.Add(this.cmdSendOutputReportInterrupt);
-            this.fraInterruptTransfers.Controls.Add(this.cmdGetInputReportInterrupt);
-            this.fraInterruptTransfers.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fraInterruptTransfers.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraInterruptTransfers.Location = new System.Drawing.Point(194, 128);
-            this.fraInterruptTransfers.Name = "fraInterruptTransfers";
-            this.fraInterruptTransfers.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraInterruptTransfers.Size = new System.Drawing.Size(145, 152);
-            this.fraInterruptTransfers.TabIndex = 14;
-            this.fraInterruptTransfers.TabStop = false;
-            this.fraInterruptTransfers.Text = "Interrupt Transfers";
-            // 
-            // cmdPeriodicTransfers
-            // 
-            this.cmdPeriodicTransfers.Location = new System.Drawing.Point(176, 12);
-            this.cmdPeriodicTransfers.Name = "cmdPeriodicTransfers";
-            this.cmdPeriodicTransfers.Size = new System.Drawing.Size(118, 34);
-            this.cmdPeriodicTransfers.TabIndex = 16;
-            this.cmdPeriodicTransfers.Text = "Start";
-            this.cmdPeriodicTransfers.UseVisualStyleBackColor = true;
-            this.cmdPeriodicTransfers.Click += new System.EventHandler(this.cmdPeriodicTransfers_Click);
-            // 
-            // cmdSendOutputReportControl
-            // 
-            this.cmdSendOutputReportControl.Location = new System.Drawing.Point(10, 27);
-            this.cmdSendOutputReportControl.Name = "cmdSendOutputReportControl";
-            this.cmdSendOutputReportControl.Size = new System.Drawing.Size(118, 50);
-            this.cmdSendOutputReportControl.TabIndex = 12;
-            this.cmdSendOutputReportControl.Text = "Send Output Report";
-            this.cmdSendOutputReportControl.UseVisualStyleBackColor = true;
-            this.cmdSendOutputReportControl.Click += new System.EventHandler(this.cmdSendOutputReportControl_Click);
-            // 
-            // cmdGetInputReportControl
-            // 
-            this.cmdGetInputReportControl.Location = new System.Drawing.Point(10, 83);
-            this.cmdGetInputReportControl.Name = "cmdGetInputReportControl";
-            this.cmdGetInputReportControl.Size = new System.Drawing.Size(118, 50);
-            this.cmdGetInputReportControl.TabIndex = 13;
-            this.cmdGetInputReportControl.Text = "Get Input Report";
-            this.cmdGetInputReportControl.UseVisualStyleBackColor = true;
-            this.cmdGetInputReportControl.Click += new System.EventHandler(this.cmdGetInputReportControl_Click);
-            // 
-            // fraControlTransfers
-            // 
-            this.fraControlTransfers.BackColor = System.Drawing.SystemColors.Control;
-            this.fraControlTransfers.Controls.Add(this.cmdGetFeatureReport);
-            this.fraControlTransfers.Controls.Add(this.cmdSendFeatureReport);
-            this.fraControlTransfers.Controls.Add(this.cmdSendOutputReportControl);
-            this.fraControlTransfers.Controls.Add(this.cmdGetInputReportControl);
-            this.fraControlTransfers.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fraControlTransfers.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraControlTransfers.Location = new System.Drawing.Point(359, 128);
-            this.fraControlTransfers.Name = "fraControlTransfers";
-            this.fraControlTransfers.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraControlTransfers.Size = new System.Drawing.Size(277, 152);
-            this.fraControlTransfers.TabIndex = 15;
-            this.fraControlTransfers.TabStop = false;
-            this.fraControlTransfers.Text = "Control Transfers";
-            // 
-            // cmdGetFeatureReport
-            // 
-            this.cmdGetFeatureReport.Location = new System.Drawing.Point(141, 83);
-            this.cmdGetFeatureReport.Name = "cmdGetFeatureReport";
-            this.cmdGetFeatureReport.Size = new System.Drawing.Size(118, 50);
-            this.cmdGetFeatureReport.TabIndex = 15;
-            this.cmdGetFeatureReport.Text = "Get Feature Report";
-            this.cmdGetFeatureReport.UseVisualStyleBackColor = true;
-            this.cmdGetFeatureReport.Click += new System.EventHandler(this.cmdGetFeatureReport_Click);
-            // 
-            // cmdSendFeatureReport
-            // 
-            this.cmdSendFeatureReport.Location = new System.Drawing.Point(141, 27);
-            this.cmdSendFeatureReport.Name = "cmdSendFeatureReport";
-            this.cmdSendFeatureReport.Size = new System.Drawing.Size(118, 50);
-            this.cmdSendFeatureReport.TabIndex = 14;
-            this.cmdSendFeatureReport.Text = "Send Feature Report";
-            this.cmdSendFeatureReport.UseVisualStyleBackColor = true;
-            this.cmdSendFeatureReport.Click += new System.EventHandler(this.cmdSendFeatureReport_Click);
-            // 
-            // fraSendAndGetContinuous
-            // 
-            this.fraSendAndGetContinuous.BackColor = System.Drawing.SystemColors.Control;
-            this.fraSendAndGetContinuous.Controls.Add(this.radFeature);
-            this.fraSendAndGetContinuous.Controls.Add(this.btnMonitor);
-            this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputControl);
-            this.fraSendAndGetContinuous.Controls.Add(this.radInputOutputInterrupt);
-            this.fraSendAndGetContinuous.Controls.Add(this.cmdPeriodicTransfers);
-            this.fraSendAndGetContinuous.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fraSendAndGetContinuous.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.fraSendAndGetContinuous.Location = new System.Drawing.Point(35, 186);
-            this.fraSendAndGetContinuous.Name = "fraSendAndGetContinuous";
-            this.fraSendAndGetContinuous.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fraSendAndGetContinuous.Size = new System.Drawing.Size(300, 112);
-            this.fraSendAndGetContinuous.TabIndex = 17;
-            this.fraSendAndGetContinuous.TabStop = false;
-            this.fraSendAndGetContinuous.Text = "Send and Get Continuous";
-            // 
-            // radFeature
-            // 
-            this.radFeature.AutoSize = true;
-            this.radFeature.Location = new System.Drawing.Point(17, 76);
-            this.radFeature.Name = "radFeature";
-            this.radFeature.Size = new System.Drawing.Size(62, 18);
-            this.radFeature.TabIndex = 19;
-            this.radFeature.TabStop = true;
-            this.radFeature.Text = "Feature";
-            this.radFeature.UseVisualStyleBackColor = true;
-            this.radFeature.CheckedChanged += new System.EventHandler(this.radFeature_CheckedChanged);
-            // 
             // btnMonitor
             // 
-            this.btnMonitor.Location = new System.Drawing.Point(176, 52);
+            this.btnMonitor.Location = new System.Drawing.Point(221, 156);
             this.btnMonitor.Name = "btnMonitor";
             this.btnMonitor.Size = new System.Drawing.Size(119, 30);
             this.btnMonitor.TabIndex = 64;
             this.btnMonitor.Text = "USB Monitor";
             this.btnMonitor.UseVisualStyleBackColor = true;
             this.btnMonitor.Click += new System.EventHandler(this.btnMonitor_Click);
-            // 
-            // radInputOutputControl
-            // 
-            this.radInputOutputControl.AutoSize = true;
-            this.radInputOutputControl.Location = new System.Drawing.Point(17, 52);
-            this.radInputOutputControl.Name = "radInputOutputControl";
-            this.radInputOutputControl.Size = new System.Drawing.Size(120, 18);
-            this.radInputOutputControl.TabIndex = 18;
-            this.radInputOutputControl.TabStop = true;
-            this.radInputOutputControl.Text = "Input Output Control";
-            this.radInputOutputControl.UseVisualStyleBackColor = true;
-            this.radInputOutputControl.CheckedChanged += new System.EventHandler(this.radInputOutputControl_CheckedChanged);
-            // 
-            // radInputOutputInterrupt
-            // 
-            this.radInputOutputInterrupt.AutoSize = true;
-            this.radInputOutputInterrupt.Location = new System.Drawing.Point(17, 28);
-            this.radInputOutputInterrupt.Name = "radInputOutputInterrupt";
-            this.radInputOutputInterrupt.Size = new System.Drawing.Size(126, 18);
-            this.radInputOutputInterrupt.TabIndex = 17;
-            this.radInputOutputInterrupt.TabStop = true;
-            this.radInputOutputInterrupt.Text = "Input Output Interrupt";
-            this.radInputOutputInterrupt.UseVisualStyleBackColor = true;
-            this.radInputOutputInterrupt.CheckedChanged += new System.EventHandler(this.radInputOutputInterrupt_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -666,7 +375,7 @@ namespace GenericHid
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(392, 438);
+            this.label8.Location = new System.Drawing.Point(388, 168);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 45);
             this.label8.TabIndex = 67;
@@ -676,7 +385,7 @@ namespace GenericHid
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(392, 393);
+            this.label7.Location = new System.Drawing.Point(388, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 45);
             this.label7.TabIndex = 66;
@@ -686,7 +395,7 @@ namespace GenericHid
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(392, 335);
+            this.label6.Location = new System.Drawing.Point(388, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 45);
             this.label6.TabIndex = 65;
@@ -696,7 +405,7 @@ namespace GenericHid
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(381, 286);
+            this.label5.Location = new System.Drawing.Point(377, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 45);
             this.label5.TabIndex = 64;
@@ -850,14 +559,14 @@ namespace GenericHid
             // 
             // grpUsbStatus
             // 
+            this.grpUsbStatus.Controls.Add(this.btnMonitor);
             this.grpUsbStatus.Controls.Add(this.lblUsbIndicator);
             this.grpUsbStatus.Controls.Add(this.lblUsbMessage);
             this.grpUsbStatus.Controls.Add(this.label9);
             this.grpUsbStatus.Controls.Add(this.lblUsbStatus);
-            this.grpUsbStatus.Controls.Add(this.fraSendAndGetContinuous);
-            this.grpUsbStatus.Location = new System.Drawing.Point(16, 286);
+            this.grpUsbStatus.Location = new System.Drawing.Point(12, 16);
             this.grpUsbStatus.Name = "grpUsbStatus";
-            this.grpUsbStatus.Size = new System.Drawing.Size(346, 313);
+            this.grpUsbStatus.Size = new System.Drawing.Size(346, 197);
             this.grpUsbStatus.TabIndex = 65;
             this.grpUsbStatus.TabStop = false;
             this.grpUsbStatus.Text = "USB Status";
@@ -918,26 +627,14 @@ namespace GenericHid
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.fraControlTransfers);
-            this.Controls.Add(this.fraInterruptTransfers);
-            this.Controls.Add(this.cmdFindDevice);
-            this.Controls.Add(this.fraDeviceIdentifiers);
-            this.Controls.Add(this.fraInputReportBufferSize);
             this.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(21, 28);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Generic HID Tester";
             this.Closed += new System.EventHandler(this.frmMain_Closed);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.fraInputReportBufferSize.ResumeLayout(false);
-            this.fraInputReportBufferSize.PerformLayout();
-            this.fraDeviceIdentifiers.ResumeLayout(false);
-            this.fraDeviceIdentifiers.PerformLayout();
-            this.fraInterruptTransfers.ResumeLayout(false);
-            this.fraControlTransfers.ResumeLayout(false);
-            this.fraSendAndGetContinuous.ResumeLayout(false);
-            this.fraSendAndGetContinuous.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
@@ -987,14 +684,6 @@ namespace GenericHid
 		private string _usbDeviceId = "unknown";
 		private string _usbClassGuid = "unknown";
 
-		/*
-        /// <summary>
-        /// for cpu testing chart- for tests only
-        /// </summary>
-        /// 
-        private Thread cpuThread;
-        private double[] cpuarray = new double[60];
-        */
 
 		private static System.Timers.Timer _periodicTransfers;
 
@@ -1004,13 +693,6 @@ namespace GenericHid
 
 		private enum FormActions
 		{
-//			AddItemToListBox,
-			DisableInputReportBufferSize,
-			EnableGetInputReportInterruptTransfer,
-			EnableInputReportBufferSize,
-			EnableSendOutputReportInterrupt,
-//			ScrollToBottomOfListBox,
-			SetInputReportBufferSize
 		}
 
 		private enum ReportReadOrWritten
@@ -1069,45 +751,7 @@ namespace GenericHid
 		{
 			try
 			{
-				//  Select an action to perform on the form:
 
-				switch (action)
-				{
-//					case FormActions.AddItemToListBox:
-
-//						LstResults.Items.Add(formText);
-//						break;
-
-					case FormActions.DisableInputReportBufferSize:
-
-						cmdInputReportBufferSize.Enabled = false;
-						break;
-
-					case FormActions.EnableGetInputReportInterruptTransfer:
-
-						cmdGetInputReportInterrupt.Enabled = true;
-						break;
-
-					case FormActions.EnableInputReportBufferSize:
-
-						cmdInputReportBufferSize.Enabled = true;
-						break;
-
-					case FormActions.EnableSendOutputReportInterrupt:
-
-						cmdSendOutputReportInterrupt.Enabled = true;
-						break;
-
-//					case FormActions.ScrollToBottomOfListBox:
-
-//						LstResults.SelectedIndex = LstResults.Items.Count - 1;
-//						break;
-
-					case FormActions.SetInputReportBufferSize:
-
-						txtInputReportBufferSize.Text = formText;
-						break;
-				}
 			}
 			catch (Exception ex)
 			{
@@ -1173,29 +817,6 @@ namespace GenericHid
 			}
 		}
 
-		/// <summary>
-		/// Close the handle and FileStreams for a device.
-		/// </summary>
-		/// 
-		/*
-		private void CloseCommunications()
-		{
-			if (_deviceData != null)
-			{
-				_deviceData.Close();
-			}
-
-			if ((_hidHandle != null) && (!(_hidHandle.IsInvalid)))
-			{
-				_hidHandle.Close();
-			}
-
-			// The next attempt to communicate will get a new handle and FileStreams.
-
-			_deviceHandleObtained = false;
-		}
-		*/
-
 		private void CloseCommunications()
 		{
 			try
@@ -1230,311 +851,7 @@ namespace GenericHid
 		}
 
 
-		///  <summary>
-		///  Search for a specific device.
-		///  </summary>
 
-		private void cmdFindDevice_Click(Object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					_deviceDetected = FindDeviceUsingWmi();
-					if (_deviceDetected)
-					{
-						FindTheHid();
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		/// <summary>
-		/// Request to get a Feature report from the device.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-
-		private void cmdGetFeatureReport_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					//  Don't allow another transfer request until this one completes.
-					//  Move the focus away from the button to prevent the focus from 
-					//  switching to the next control in the tab order on disabling the button.
-
-					fraControlTransfers.Focus();
-					cmdGetFeatureReport.Enabled = false;
-					_transferType = TransferTypes.Control;
-					RequestToGetFeatureReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-
-		/// <summary>
-		/// Request to get an Input report from the device using a control transfer.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-
-		private void cmdGetInputReportControl_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				//  Don't allow another transfer request until this one completes.
-				//  Move the focus away from the button to prevent the focus from 
-				//  switching to the next control in the tab order on disabling the button.
-
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					fraControlTransfers.Focus();
-					cmdGetInputReportControl.Enabled = false;
-					_transferType = TransferTypes.Control;
-					RequestToGetInputReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Request to get an Input report retrieved using interrupt transfers.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
-        private void cmdGetInputReportInterrupt_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					//  Don't allow another transfer request until this one completes.
-					//  Move the focus away from the button to prevent the focus from 
-					//  switching to the next control in the tab order on disabling the button.
-
-					fraInterruptTransfers.Focus();
-					cmdGetInputReportInterrupt.Enabled = false;
-					_transferType = TransferTypes.Interrupt;
-					RequestToGetInputReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Set the number of Input reports the HID driver will store.
-        ///  </summary>
-
-        private void cmdInputReportBufferSize_Click(Object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					SetInputReportBufferSize();
-				}
-			}
-			catch
-				(Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-		/// <summary>
-		/// Alternate sending and getting a report.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-
-		private void cmdPeriodicTransfers_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (cmdPeriodicTransfers.Text == "Start")
-				{
-					if (_transferInProgress)
-					{
-						DisplayTransferInProgressMessage();
-					}
-					else
-					{
-						_sendOrGet = SendOrGet.Send;
-						PeriodicTransfersStart();
-					}
-				}
-				else
-				{
-					PeriodicTransfersStop();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Request to send a Feature report using a control transfer.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void cmdSendFeatureReport_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					//  Don't allow another transfer request until this one completes.
-					//  Move the focus away from the button to prevent the focus from 
-					//  switching to the next control in the tab order on disabling the button.
-
-					fraControlTransfers.Focus();
-					cmdSendFeatureReport.Enabled = false;
-					_transferType = TransferTypes.Control;
-					RequestToSendFeatureReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Request to send an Output report using a control transfer.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
-        private void cmdSendOutputReportControl_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					//  Don't allow another transfer request until this one completes.
-					//  Move the focus away from the button to prevent the focus from 
-					//  switching to the next control in the tab order on disabling the button.
-
-					fraControlTransfers.Focus();
-					cmdSendOutputReportControl.Enabled = false;
-					_transferType = TransferTypes.Control;
-					RequestToSendOutputReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Request to send an Output report using an interrupt transfer.		
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void cmdSendOutputReportInterrupt_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (_transferInProgress)
-				{
-					DisplayTransferInProgressMessage();
-				}
-				else
-				{
-					//  Don't allow another transfer request until this one completes.
-					//  Move the focus away from the button to prevent the focus from 
-					//  switching to the next control in the tab order on disabling the button.
-
-					fraInterruptTransfers.Focus();
-					cmdSendOutputReportInterrupt.Enabled = false;
-					_transferType = TransferTypes.Interrupt;
-					RequestToSendOutputReport();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-		///  <summary>
-		///  Called on arrival of any device.
-		///  Calls a routine that searches to see if the desired device is present.
-		///  </summary>
-		/*
-        private void DeviceAdded(object sender, EventArrivedEventArgs e)
-		{
-			try
-			{
-				Debug.WriteLine("A USB device has been inserted");
-
-				_deviceDetected = FindDeviceUsingWmi();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-		*/
 
 		private void DeviceAdded(object sender, EventArrivedEventArgs e)
 		{
@@ -1554,19 +871,14 @@ namespace GenericHid
 					if (_deviceDetected)
 					{
 						_deviceHandleObtained = FindTheHid();
-						//**************************//
 						if (_deviceHandleObtained)
 						{
 							StartUsbPollingAutomatically();
 						}
-						//**************************//
 						if (_deviceHandleObtained)
 						{
-//							label9.Text = "USB Device connected";
-//							LstResults.Items.Add("USB device reconnected.");
-//							AddUsbEvent("USB device connected");
+
 							AddUsbEvent("USB device reconnected");
-//							ScrollToBottomOfListBox();
 						}
 					}
 				});
@@ -1678,42 +990,8 @@ namespace GenericHid
 
         private void DisplayReportData(Byte[] buffer, ReportTypes currentReportType, ReportReadOrWritten currentReadOrWritten)
 		{
-			/*
-			try
-			{
-				Int32 count;
-
-//				LstResults.Items.Add(currentReportType.ToString() + " report has been " + currentReadOrWritten.ToString().ToLower() + ".");
-
-				//  Display the report data received in the form's list box.
-
-//				LstResults.Items.Add(" Report ID: " + String.Format("{0:X2} ", buffer[0]));
-//				LstResults.Items.Add(" Report Data:");
-
-				TxtBytesReceived.Text = "";
-
-				for (count = 1; count <= buffer.Length - 1; count++)
-				{
-					//  Display bytes as 2-character Hex strings.
-
-					String byteValue = String.Format("{0:X2} ", buffer[count]);
-
-//					LstResults.Items.Add(" " + byteValue);
-
-					//  Display the received bytes in the text box.
-
-					TxtBytesReceived.SelectionStart = TxtBytesReceived.Text.Length;
-					TxtBytesReceived.SelectedText = byteValue + Environment.NewLine;
-				}
-				ScrollToBottomOfListBox();
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-			*/
 		}
+
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
         ///  Display a message if the user clicks a button when a transfer is in progress.
@@ -1753,13 +1031,7 @@ namespace GenericHid
         /// 
         private void EnableFormControls()
 		{
-			cmdGetInputReportInterrupt.Enabled = true;
-			cmdSendOutputReportControl.Enabled = true;
-			cmdGetInputReportControl.Enabled = true;
-			cmdGetFeatureReport.Enabled = true;
-			cmdSendFeatureReport.Enabled = true;
-			cmdPeriodicTransfers.Enabled = true;
-			cmdSendOutputReportInterrupt.Enabled = true;
+//			cmdPeriodicTransfers.Enabled = true;
 		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
@@ -1852,7 +1124,7 @@ namespace GenericHid
 
 				//  Get the device's Vendor ID and Product ID from the form's text boxes.
 
-				GetVendorAndProductIDsFromTextBoxes(ref _myVendorId, ref _myProductId);
+//				GetVendorAndProductIDsFromTextBoxes(ref _myVendorId, ref _myProductId);
 
 				// Get the HID-class GUID.
 
@@ -1907,13 +1179,7 @@ namespace GenericHid
 									//  Display the information in form's list box.
 									AddUsbEvent("HID handle opened, VID=" +	_myVendorId.ToString("X4") + " PID=" + _myProductId.ToString("X4"));
 									_deviceHandleObtained = true;
-									SetUsbStatus(
-										"USB device connected",
-										"VID: " + _myVendorId.ToString("X4") +
-										"  PID: " + _myProductId.ToString("X4"),
-										Color.LimeGreen
-									);
-
+									SetUsbStatus("USB device connected", "VID: " + _myVendorId.ToString("X4") + "  PID: " + _myProductId.ToString("X4"), Color.LimeGreen );
 									myDevicePathName = devicePathName[memberIndex];
 								}
 								else
@@ -1950,11 +1216,6 @@ namespace GenericHid
 					//  Find out if the device is a system mouse or keyboard.
 
 					_hidUsage = _myHid.GetHidUsage(_myHid.Capabilities);
-
-					//  Get the Input report buffer size.
-
-					GetInputReportBufferSize();
-					MyMarshalDataToForm(FormActions.EnableInputReportBufferSize, "");
 
 					//Close the handle and reopen it with read/write access.
 
@@ -1998,8 +1259,6 @@ namespace GenericHid
 				{
 					Debug.WriteLine("HID device not found");
 					SetUsbStatus("USB device not connected", "Waiting for device...", indicatorColor: Color.DimGray);
-
-					MyMarshalDataToForm(FormActions.DisableInputReportBufferSize, "");
 					EnableFormControls();
 				}
 				return _deviceHandleObtained;
@@ -2041,7 +1300,6 @@ namespace GenericHid
             trackBar3.Value = 25;
             label3.Text = trackBar3.Value.ToString();
 
-
             try
 			{
 				FrmMy = this;
@@ -2058,95 +1316,8 @@ namespace GenericHid
 				throw;
 			}
             timer1.Start();
-
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Find and display the number of Input buffers
-        ///  (the number of Input reports the HID driver will store). 
-        ///  </summary>
-
-        private void GetInputReportBufferSize()
-		{
-			Int32 numberOfInputBuffers = 0;
-			Boolean success;
-
-			try
-			{
-				//  Get the number of input buffers.
-
-				_myHid.GetNumberOfInputBuffers(_hidHandle, ref numberOfInputBuffers);
-
-				//  Display the result in the text box.
-
-				MyMarshalDataToForm(FormActions.SetInputReportBufferSize, Convert.ToString(numberOfInputBuffers));
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Retrieve a Vendor ID and Product ID in hexadecimal 
-        ///  from the form's text boxes and convert the text to Int32s.
-        ///  </summary>
-        ///  
-        ///  <param name="myVendorId"> the Vendor ID</param>
-        ///  <param name="myProductId"> the Product ID</param>
-
-        private void GetVendorAndProductIDsFromTextBoxes(ref Int32 myVendorId, ref Int32 myProductId)
-		{
-			try
-			{
-				myVendorId = Int32.Parse(txtVendorID.Text, NumberStyles.AllowHexSpecifier);
-				myProductId = Int32.Parse(txtProductID.Text, NumberStyles.AllowHexSpecifier);
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Initialize the elements on the form.
-        ///  </summary>
-
-        private void InitializeDisplay()
-		{
-			try
-			{
-				//  Create a dropdown list box for each byte to send in a report.
-				//  Display the values as 2-character hex strings.
-
-				Int16 count;
-				for (count = 0; count <= 255; count++)
-				{
-					String byteValue = String.Format("{0:X2} ", count);
-				}
-
-				//  Select a default value for each box
-
-				FrmMy.radInputOutputInterrupt.Checked = true;
-
-				//  Check the autoincrement box to increment the values each time a report is sent.
-
-				//  Don't allow the user to select an input report buffer size until there is
-				//  a handle to a HID.
-
-				cmdInputReportBufferSize.Focus();
-				cmdInputReportBufferSize.Enabled = false;
-
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
         ///  Enables accessing a form's controls from another thread 
@@ -2189,8 +1360,6 @@ namespace GenericHid
 
 				CloseCommunications();
 
-				MyMarshalDataToForm(FormActions.EnableGetInputReportInterruptTransfer,"");
-
 				_transferInProgress = false;
 				_sendOrGet = SendOrGet.Send;
 			}
@@ -2211,10 +1380,6 @@ namespace GenericHid
 
 				CloseCommunications();
 
-				MyMarshalDataToForm(
-					FormActions.EnableSendOutputReportInterrupt,
-					"");
-
 				_transferInProgress = false;
 				_sendOrGet = SendOrGet.Get;
 			}
@@ -2234,16 +1399,7 @@ namespace GenericHid
 			{
 				if (!_transferInProgress)
 				{
-					if (_reportType == ReportTypes.Feature)
-					{
-						SendOrGetFeatureReport();
-					}
-					else
-					{
-						// Output and Input reports
-
-						SendOutputReportOrGetInputReport();
-					}
+					SendOutputReportOrGetInputReport();
 				}
 			}
 			catch (Exception ex)
@@ -2261,47 +1417,16 @@ namespace GenericHid
 		{
 			// Don't allow changing the transfer type while transfers are in progress.
 
-			if (radFeature.Checked)
-			{
-				radInputOutputControl.Enabled = false;
-				radInputOutputInterrupt.Enabled = false;
-			}
-			else if (radInputOutputControl.Checked)
-			{
-				radFeature.Enabled = false;
-				radInputOutputInterrupt.Enabled = false;
-			}
-			else if (radInputOutputInterrupt.Checked)
-			{
-				radFeature.Enabled = false;
-				radInputOutputControl.Enabled = false;
-			}
-
 			//  Change the command button's text.
 
-			cmdPeriodicTransfers.Text = "Stop";
 
 			//  Enable the timer event to trigger a set of transfers.
 
 			_periodicTransfers.Start();
 
-			cmdPeriodicTransfers.Enabled = true;
+			_transferType = TransferTypes.Interrupt;
+			_reportType = ReportTypes.Output;
 
-			if (radInputOutputInterrupt.Checked)
-			{
-				_transferType = TransferTypes.Interrupt;
-				_reportType = ReportTypes.Output;
-			}
-			else if (radInputOutputControl.Checked)
-			{
-				_transferType = TransferTypes.Control;
-				_reportType = ReportTypes.Output;
-			}
-			else if (radFeature.Checked)
-			{
-				_transferType = TransferTypes.Control;
-				_reportType = ReportTypes.Feature;
-			}
 			_periodicTransfersRequested = true;
 			PeriodicTransfers();
 		}
@@ -2319,17 +1444,9 @@ namespace GenericHid
 			// Disable the timer that triggers the transfers.	
 
 			_periodicTransfers.Stop();
-			cmdPeriodicTransfers.Enabled = true;
-
-			//  Change the command button's text.
-
-			cmdPeriodicTransfers.Text = "Start";
 
 			// Re-allow changing the transfer type.
 
-			radFeature.Enabled = true;
-			radInputOutputControl.Enabled = true;
-			radInputOutputInterrupt.Enabled = true;
 		}
 
 		private void radInputOutputControl_CheckedChanged(object sender, EventArgs e)
@@ -2343,70 +1460,8 @@ namespace GenericHid
 		private void radFeature_CheckedChanged(object sender, EventArgs e)
 		{
 		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Request a Feature report.
-        ///  Assumes report ID = 0.
-        ///  </summary>
 
-        private void RequestToGetFeatureReport()
-		{
-			String byteValue = null;
 
-			try
-			{
-				//  If the device hasn't been detected, was removed, or timed out on a previous attempt
-				//  to access it, look for the device.
-
-				if (!_deviceHandleObtained)
-				{
-					_deviceHandleObtained = FindTheHid();
-				}
-
-				if (_deviceHandleObtained)
-				{
-					Byte[] inFeatureReportBuffer = null;
-
-					if ((_myHid.Capabilities.FeatureReportByteLength > 0))
-					{
-						//  The HID has a Feature report.	
-						//  Read a report from the device.
-
-						//  Set the size of the Feature report buffer. 
-
-						if ((_myHid.Capabilities.FeatureReportByteLength > 0))
-						{
-							inFeatureReportBuffer = new Byte[_myHid.Capabilities.FeatureReportByteLength];
-						}
-
-						//  Read a report.
-
-						Boolean success = _myHid.GetFeatureReport(_hidHandle, ref inFeatureReportBuffer);
-
-						if (success)
-						{
-							DisplayReportData(inFeatureReportBuffer, ReportTypes.Feature, ReportReadOrWritten.Read);
-						}
-						else
-						{
-							CloseCommunications();
-							AddUsbEvent("Failed to read Feature report");
-						}
-					}
-					else
-					{
-						AddUsbEvent("HID has no Feature report");
-					}
-				}
-				_transferInProgress = false;
-				cmdGetFeatureReport.Enabled = true;
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
         ///  Request an Input report.
@@ -2459,7 +1514,6 @@ namespace GenericHid
 									//  Read a report using a control transfer.
 
 									success = _myHid.GetInputReportViaControlTransfer(_hidHandle, ref inputReportBuffer);
-									cmdGetInputReportControl.Enabled = true;
 									_transferInProgress = false;
 								}
 							}
@@ -2473,32 +1527,6 @@ namespace GenericHid
 									//  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
 
 									// Create a delegate to execute on a timeout.
-									///////////////////////////////////////////////////////////////////////////////////
-									/*
-									Action onReadTimeoutAction = OnReadTimeout;
-
-									// The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
-
-									var cts = new CancellationTokenSource();
-
-									// Cancel the read if it hasn't completed after a timeout.
-
-									cts.CancelAfter(readTimeout);
-
-									// Specify the function to call on a timeout.
-
-									cts.Token.Register(onReadTimeoutAction);
-
-									// Stops waiting when data is available or on timeout:
-
-									Int32 bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
-
-									// Arrive here only if the operation completed.
-
-									// Dispose to stop the timeout timer. 
-
-									cts.Dispose();
-									*/
 
 									Int32 bytesRead;
 
@@ -2512,10 +1540,8 @@ namespace GenericHid
 												inputReportBuffer,
 												cts);
 									}
-									///////////////////////////////////////////////////////////////////////////////////
 
 									_transferInProgress = false;
-									cmdGetInputReportInterrupt.Enabled = true;
 
 									if (bytesRead > 0)
 									{
@@ -2569,86 +1595,8 @@ namespace GenericHid
 			}
 
 		}
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-		///  <summary>
-		///  Sends a Feature report.
-		///  Assumes report ID = 0.
-		///  </summary>
 
-		private void RequestToSendFeatureReport()
-		{
-			String byteValue = null;
 
-			try
-			{
-				_transferInProgress = true;
-
-				//  If the device hasn't been detected, was removed, or timed out on a previous attempt
-				//  to access it, look for the device.
-
-				if (!_deviceHandleObtained)
-				{
-					_deviceHandleObtained = FindTheHid();
-				}
-
-				if (_deviceHandleObtained)
-				{
-//					GetBytesToSend();
-
-					if ((_myHid.Capabilities.FeatureReportByteLength > 0))
-					{
-						//  The HID has a Feature report.
-						//  Set the size of the Feature report buffer. 
-
-						var outFeatureReportBuffer = new Byte[_myHid.Capabilities.FeatureReportByteLength];
-
-						//  Store the report ID in the buffer.
-
-						outFeatureReportBuffer[0] = 0;
-
-						//  Store the report data following the report ID.
-						//  Use the data in the combo boxes on the form.
-
-						if (outFeatureReportBuffer.Length > 1)
-						{
-							outFeatureReportBuffer[1] = 0;
-						}
-
-						if (outFeatureReportBuffer.Length > 2)
-						{
-							outFeatureReportBuffer[2] = 0;
-						}
-						//  Write a report to the device
-
-						Boolean success = _myHid.SendFeatureReport(_hidHandle, outFeatureReportBuffer);
-
-						if (success)
-						{
-							DisplayReportData(outFeatureReportBuffer, ReportTypes.Feature, ReportReadOrWritten.Written);
-						}
-						else
-						{
-							CloseCommunications();
-							AddUsbEvent("Failed to send Feature report");
-						}
-					}
-
-					else
-					{
-						AddUsbEvent("HID has no Feature report");
-					}
-
-				}
-				_transferInProgress = false;
-				cmdSendFeatureReport.Enabled = true;
-
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
         ///  Sends an Output report.
@@ -2724,7 +1672,6 @@ namespace GenericHid
 								success = _myHid.SendOutputReportViaControlTransfer(_hidHandle, outputReportBuffer);
 
 								_transferInProgress = false;
-								cmdSendOutputReportControl.Enabled = true;
 							}
 						}
 						else
@@ -2746,7 +1693,6 @@ namespace GenericHid
 							}
 
 							_transferInProgress = false;
-							cmdSendOutputReportInterrupt.Enabled = true;
 						}
 						if (success)
 						{
@@ -2782,77 +1728,9 @@ namespace GenericHid
 				Debug.WriteLine("USB write error: " + ex);
 				HandleUsbDisconnect(ex.Message);
 			}
-			//******************************************************************************************//
-
-
 		}
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-		///  <summary>
-		///  Scroll to the bottom of the list box and trim as needed.
-		///  </summary>
-		/*
-		private void ScrollToBottomOfListBox()
-		{
-			try
-			{
-				LstResults.SelectedIndex = LstResults.Items.Count - 1;
 
-				//  If the list box is getting too large, trim its contents by removing the earliest data.
-
-				if (LstResults.Items.Count > 1000)
-				{
-					Int32 count;
-					for (count = 1; count <= 500; count++)
-					{
-						LstResults.Items.RemoveAt(4);
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
-		*/
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Request to send or get a Feature report.
-        /// </summary>
-
-        private void SendOrGetFeatureReport()
-		{
-			try
-			{
-				//  If the device hasn't been detected, was removed, or timed out on a previous attempt
-				//  to access it, look for the device.
-
-				if (!_deviceHandleObtained)
-				{
-					_deviceHandleObtained = FindTheHid();
-				}
-
-				if (_deviceHandleObtained)
-				{
-					switch (_sendOrGet)
-					{
-						case SendOrGet.Send:
-							RequestToSendFeatureReport();
-							_sendOrGet = SendOrGet.Get;
-							break;
-						case SendOrGet.Get:
-							RequestToGetFeatureReport();
-							_sendOrGet = SendOrGet.Send;
-							break;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
+ 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
         /// Request to send an Output report or get an Input report.
@@ -2879,8 +1757,6 @@ namespace GenericHid
 					}
 					else
 					{
-//						RequestToGetInputReport();
-//						_sendOrGet = SendOrGet.Send;
 						RequestToGetDATAReport();
 						_sendOrGet = SendOrGet.Send;
 					}
@@ -2892,41 +1768,7 @@ namespace GenericHid
 				throw;
 			}
 		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///  <summary>
-        ///  Set the number of Input buffers (the number of Input reports 
-        ///  the host will store) from the value in the text box.
-        ///  </summary>
 
-        private void SetInputReportBufferSize()
-		{
-			try
-			{
-				if (!_transferInProgress)
-				{
-					//  Get the number of buffers from the text box.
-
-					Int32 numberOfInputBuffers = Convert.ToInt32(txtInputReportBufferSize.Text);
-
-					//  Set the number of buffers.
-
-					_myHid.SetNumberOfInputBuffers(_hidHandle, numberOfInputBuffers);
-
-					//  Verify and display the result.
-
-					GetInputReportBufferSize();
-				}
-				else
-				{
-					DisplayTransferInProgressMessage();
-				}
-			}
-			catch (Exception ex)
-			{
-				DisplayException(Name, ex);
-				throw;
-			}
-		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
         ///  Perform actions that must execute when the program ends.
@@ -2956,7 +1798,6 @@ namespace GenericHid
 			try
 			{
 				_myHid = new Hid();
-				InitializeDisplay();
 
 				_periodicTransfers = new System.Timers.Timer(periodicTransferInterval);
 				_periodicTransfers.Elapsed += DoPeriodicTransfers;
@@ -2965,10 +1806,8 @@ namespace GenericHid
 
 				//  Default USB Vendor ID and Product ID:
 
-				txtVendorID.Text = "0483";
-				txtProductID.Text = "5750";
-
-				GetVendorAndProductIDsFromTextBoxes(ref _myVendorId, ref _myProductId);
+				_myVendorId  = 0x0483;
+				_myProductId = 0x5750;
 
 				DeviceNotificationsStart();
 				FindDeviceUsingWmi();
@@ -3041,121 +1880,34 @@ namespace GenericHid
 			Debug.WriteLine("The last Win32 Error was: " + error);
 		}
 
-       
-
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             label1.Text = trackBar1.Value.ToString();
-			//            RequestToSendOutputReport();
-			/*
-			if (_transferInProgress)
-			{
-				return;
-			}
-
-			_transferType = TransferTypes.Interrupt;
-			RequestToSendOutputReport();
-			*/
 		}
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             label2.Text = trackBar2.Value.ToString();
-			/*
-			if (_transferInProgress)
-			{
-				return;
-			}
-
-			_transferType = TransferTypes.Interrupt;
-			RequestToSendOutputReport();*/
 		}
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
             label3.Text = trackBar3.Value.ToString();
-			/*
-			if (_transferInProgress)
-			{
-				return;
-			}
-
-			_transferType = TransferTypes.Interrupt;
-			RequestToSendOutputReport();*/
 		}
 
         private void trackBar4_Scroll(object sender, EventArgs e)
         {
-
-            //label3.Text = trackBar4.Value.ToString();
-//            progressBar1.Increment(trackBar4.Value.ToString());
-
-
             progressBar1.Value = trackBar4.Value;
-
         }
+
         private void trackBar5_Scroll(object sender, EventArgs e)
         {
-
-            //label3.Text = trackBar4.Value.ToString();
-            //            progressBar1.Increment(trackBar4.Value.ToString());
-
-
-        //    chart1.DataBindings.CollectionChanged = trackBar4.Value;
-            
-
         }
 
-//        private Thread cpuThread;
         private double[] logarray = new double[60];
-
-
-        /*
-                //////////////////////////////////////////////////
-                private void getPerfomanceCounters()
-                {
-
-                    var cpuPerfCounter = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
-                    while(true)
-                    {
-                        cpuarray[cpuarray.Length - 1] = Math.Round(cpuPerfCounter.NextValue(), 0);
-                        Array.Copy(cpuarray, 1, cpuarray, 0, cpuarray.Length - 1);
-                        if (chart1.IsHandleCreated)
-                        {
-                            this.Invoke((MethodInvoker)delegate { Updatechart1(); });
-                        }
-                        else{}
-                        Thread.Sleep(1000);
-                    }
-                }
-                //////////////////////////////////////////////////
-                private void Updatechart1()
-                {
-                    chart1.Series["Series1"].Points.Clear();
-                    for (int i = 0; i< cpuarray.Length - 1; ++i)
-                    {
-                        chart1.Series["Series1"].Points.AddY(cpuarray[i]);
-                    }
-                }
-                //////////////////////////////////////////////////
-                private void button1_Click(object sender, EventArgs e)
-                {
-                    cpuThread = new Thread(new ThreadStart(this.getPerfomanceCounters));
-                    cpuThread.IsBackground = true;
-                    cpuThread.Start();
-                }
-                //////////////////////////////////////////////////
-        */
-
- /*       private void getLogCounters()
-        {
-
-        }*/
 
         private void Updatechart1()
         {
-//            chart1.Series["Series1"].Points.AddY(trackBar5.Value);
-//            getLogCounters();
             logarray[logarray.Length - 1] = trackBar5.Value;
             Array.Copy(logarray, 1, logarray, 0, logarray.Length - 1);
             chart1.Series["Series1"].Points.Clear();
@@ -3167,49 +1919,22 @@ namespace GenericHid
             if ((_myHid.DeviceAttributes.VendorID == _myVendorId) && (_myHid.DeviceAttributes.ProductID == _myProductId) || _deviceDetected)
             {
                 label9.Text = ("USB Device in system");
-
-//                RequestToGetDATAReport();
             }
 
             if (!_deviceDetected)
 			{
                 label9.Text = ("USB Device not connected");
             }
-
-
-            //RequestToGetInputReport();
-
-            /*
-            label5.Text = (buffer[5] "USB Device in system");
-            label6.Text = (buffer[6] "USB Device in system");
-            label7.Text = (buffer[7] "USB Device in system");
-            label8.Text = (buffer[8] "USB Device in system");
-            */
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             Updatechart1();
-
-
-
-
         }
         private void button1_Click(object sender, EventArgs e)
         {
             chart1.Series["Series1"].Points.Clear();
         }
-
-
-
-
-
-
-
-
-
 
         private void GetInputReportInterrupt(object sender, EventArgs e)
         {
@@ -3225,8 +1950,6 @@ namespace GenericHid
                     //  Move the focus away from the button to prevent the focus from 
                     //  switching to the next control in the tab order on disabling the button.
 
-                    fraInterruptTransfers.Focus();
-                    cmdGetInputReportInterrupt.Enabled = false;
                     _transferType = TransferTypes.Interrupt;
                     RequestToGetInputReport();
                 }
@@ -3286,7 +2009,6 @@ namespace GenericHid
                                     //  Read a report using a control transfer.
 
                                     success = _myHid.GetInputReportViaControlTransfer(_hidHandle, ref inputReportBuffer);
-                                    cmdGetInputReportControl.Enabled = true;
                                     _transferInProgress = false;
                                 }
                             }
@@ -3305,19 +2027,10 @@ namespace GenericHid
 									using (var cts = new CancellationTokenSource())
 									{
 										cts.CancelAfter(readTimeout);
-
-										bytesRead =
-											await _myHid.GetInputReportViaInterruptTransfer(
-												_deviceData,
-												inputReportBuffer,
-												cts);
+										bytesRead = await _myHid.GetInputReportViaInterruptTransfer(_deviceData, inputReportBuffer, cts);
 									}
 
-
-
-
 									_transferInProgress = false;
-                                    cmdGetInputReportInterrupt.Enabled = true;
 
                                     if (bytesRead > 0)
                                     {
@@ -3358,9 +2071,6 @@ namespace GenericHid
                         label6.Text = pres.ToString();
 						//label6.Text = (pres/100)(".")(pres % 100).ToString();
 
-
-
-
 					}
                     else
                     {
@@ -3395,27 +2105,11 @@ namespace GenericHid
 
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		/*
         to save settings from some certain object's settings in form 
         _close
         My.Settings.volume - form3.trackBar1.Value
-
-
-
-
         */
 		/// <summary>
 		/// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3438,42 +2132,32 @@ namespace GenericHid
 
 		private void TrackBar_Send_MouseUp(object sender, MouseEventArgs e)
 		{
-//			LstResults.Items.Add("MouseUp entered");
-
 			if (_transferInProgress)
 			{
 				AddUsbEvent("MouseUp blocked: transfer already in progress");
-//				ScrollToBottomOfListBox();
 				return;
 			}
 
 			if (!_deviceHandleObtained)
 			{
 				AddUsbEvent("MouseUp blocked: device handle not obtained");
-//				ScrollToBottomOfListBox();
 				return;
 			}
 
 			if (_hidHandle == null)
 			{
 				AddUsbEvent("MouseUp blocked: HID handle is null");
-//				ScrollToBottomOfListBox();
 				return;
 			}
 
 			if (_hidHandle.IsInvalid || _hidHandle.IsClosed)
 			{
 				AddUsbEvent("MouseUp blocked: HID handle is invalid or closed");
-				//				ScrollToBottomOfListBox();
 				return;
 			}
 
-//			LstResults.Items.Add("MouseUp: sending Output report");
-
 			_transferType = TransferTypes.Interrupt;
 			RequestToSendOutputReport();
-
-//			ScrollToBottomOfListBox();
 		}
 
 
@@ -3485,8 +2169,7 @@ namespace GenericHid
 
 				if (!wasConnected)
 				{
-					Debug.WriteLine(
-						"Duplicate USB disconnect ignored: " + reason);
+					Debug.WriteLine("Duplicate USB disconnect ignored: " + reason);
 
 					return;
 				}
@@ -3513,29 +2196,6 @@ namespace GenericHid
 		}
 
 
-		/*
-		private void TrackBar_Send_MouseUp(object sender, MouseEventArgs e)
-		{
-			LstResults.Items.Add("TrackBar MouseUp: send requested");
-			ScrollToBottomOfListBox();
-
-			if (_transferInProgress)
-			{
-				return;
-			}
-
-			if (!_deviceHandleObtained || _hidHandle == null || _hidHandle.IsInvalid)
-			{
-				LstResults.Items.Add("Cannot send: HID device is not connected.");
-				ScrollToBottomOfListBox();
-				return;
-			}
-
-			_transferType = TransferTypes.Interrupt;
-			RequestToSendOutputReport();
-		}
-		*/
-
 		private void StartUsbPollingAutomatically()
 		{
 			if (!_deviceHandleObtained)
@@ -3556,8 +2216,6 @@ namespace GenericHid
 				return;
 			}
 
-
-			radInputOutputInterrupt.Checked = true;
 			_transferType = TransferTypes.Interrupt;
 			_reportType = ReportTypes.Output;
 			_sendOrGet = SendOrGet.Send;
@@ -3570,6 +2228,8 @@ namespace GenericHid
 			if (_monitorForm == null || _monitorForm.IsDisposed)
 			{
 				_monitorForm = new FrmMonitor();
+				_monitorForm.FindDeviceRequested += Monitor_FindDeviceRequested;
+				_monitorForm.TransferToggleRequested += Monitor_TransferToggleRequested;
 				_monitorForm.Show(this);
 				_monitorForm.SetDeviceInfo(
 				_usbDeviceName,
@@ -3583,6 +2243,88 @@ namespace GenericHid
 			{
 				_monitorForm.BringToFront();
 				_monitorForm.Activate();
+			}
+		}
+
+		private void Monitor_FindDeviceRequested(string vendorIdText, string productIdText)
+		{
+			try
+			{
+				int vendorId = int.Parse(vendorIdText, NumberStyles.AllowHexSpecifier);
+
+				int productId = int.Parse(productIdText, NumberStyles.AllowHexSpecifier);
+
+				_myVendorId = vendorId;
+				_myProductId = productId;
+
+				if (_periodicTransfersRequested)
+				{
+					PeriodicTransfersStop();
+				}
+
+				CloseCommunications();
+
+				_deviceDetected = FindDeviceUsingWmi();
+
+				if (_deviceDetected)
+				{
+					_deviceHandleObtained = FindTheHid();
+
+					if (_deviceHandleObtained)
+					{
+						StartUsbPollingAutomatically();
+						AddUsbEvent("Connected to selected VID/PID");
+					}
+				}
+				else
+				{
+					AddUsbEvent("Selected VID/PID not found");
+				}
+			}
+			catch (FormatException)
+			{
+				AddUsbEvent("Invalid VID or PID format");
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("Monitor_FindDeviceRequested: " + ex);
+
+				AddUsbEvent("Failed to connect: " + ex.Message);
+			}
+		}
+
+		private void Monitor_TransferToggleRequested()
+		{
+			if (_periodicTransfersRequested)
+			{
+				PeriodicTransfersStop();
+
+				if (_monitorForm != null &&
+					!_monitorForm.IsDisposed)
+				{
+					_monitorForm.SetTransfersRunning(false);
+				}
+
+				AddUsbEvent("Transfers stopped");
+			}
+			else
+			{
+				if (!_deviceHandleObtained)
+				{
+					AddUsbEvent("Cannot start transfers: device not connected");
+
+					return;
+				}
+
+				_sendOrGet = SendOrGet.Send;
+				PeriodicTransfersStart();
+
+				if (_monitorForm != null && !_monitorForm.IsDisposed)
+				{
+					_monitorForm.SetTransfersRunning(true);
+				}
+
+				AddUsbEvent("Transfers started");
 			}
 		}
 
@@ -3613,7 +2355,5 @@ namespace GenericHid
 				_monitorForm.AddEvent(message);
 			}
 		}
-
 	}
-
 }
