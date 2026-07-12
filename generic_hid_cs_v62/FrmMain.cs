@@ -8,7 +8,8 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
-using System.Threading;
+//using System.Threading;
+using System.Drawing;
 
 namespace GenericHid
 {
@@ -237,15 +238,20 @@ namespace GenericHid
         private Label label6;
         private Label label5;
         private Label label9;
+        private Button btnMonitor;
+        private GroupBox grpUsbStatus;
+        private Label lblUsbIndicator;
+        private Label lblUsbMessage;
+        private Label lblUsbStatus;
         private Button cmdSendOutputReportInterrupt;
 
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.FraBytesReceived = new System.Windows.Forms.GroupBox();
             this.TxtBytesReceived = new System.Windows.Forms.TextBox();
@@ -307,6 +313,11 @@ namespace GenericHid
             this.trackBar5 = new System.Windows.Forms.TrackBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
+            this.btnMonitor = new System.Windows.Forms.Button();
+            this.grpUsbStatus = new System.Windows.Forms.GroupBox();
+            this.lblUsbIndicator = new System.Windows.Forms.Label();
+            this.lblUsbMessage = new System.Windows.Forms.Label();
+            this.lblUsbStatus = new System.Windows.Forms.Label();
             this.FraBytesReceived.SuspendLayout();
             this.FraBytesToSend.SuspendLayout();
             this.fraInputReportBufferSize.SuspendLayout();
@@ -332,6 +343,7 @@ namespace GenericHid
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
+            this.grpUsbStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // FraBytesReceived
@@ -360,8 +372,9 @@ namespace GenericHid
             this.TxtBytesReceived.Multiline = true;
             this.TxtBytesReceived.Name = "TxtBytesReceived";
             this.TxtBytesReceived.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TxtBytesReceived.Size = new System.Drawing.Size(72, 1013);
+            this.TxtBytesReceived.Size = new System.Drawing.Size(72, 173);
             this.TxtBytesReceived.TabIndex = 5;
+            this.TxtBytesReceived.Visible = false;
             // 
             // FraBytesToSend
             // 
@@ -430,8 +443,9 @@ namespace GenericHid
             this.LstResults.Location = new System.Drawing.Point(194, 425);
             this.LstResults.Name = "LstResults";
             this.LstResults.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LstResults.Size = new System.Drawing.Size(477, 886);
+            this.LstResults.Size = new System.Drawing.Size(461, 396);
             this.LstResults.TabIndex = 0;
+            this.LstResults.Visible = false;
             // 
             // fraInputReportBufferSize
             // 
@@ -694,37 +708,37 @@ namespace GenericHid
             this.trackBar1.Size = new System.Drawing.Size(413, 45);
             this.trackBar1.TabIndex = 41;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-			this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
-			// 
-			// trackBar2
-			// 
-			this.trackBar2.Location = new System.Drawing.Point(1033, 115);
+            this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(1033, 115);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(413, 45);
             this.trackBar2.TabIndex = 42;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-			this.trackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
-			// 
-			// trackBar3
-			// 
-			this.trackBar3.Location = new System.Drawing.Point(1033, 192);
+            this.trackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(1033, 192);
             this.trackBar3.Maximum = 100;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(413, 45);
             this.trackBar3.TabIndex = 43;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
-			this.trackBar3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.button1);
+            this.trackBar3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TrackBar_Send_MouseUp);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.chart1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(973, 425);
+            this.groupBox1.Location = new System.Drawing.Point(877, 378);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(597, 530);
             this.groupBox1.TabIndex = 45;
@@ -752,20 +766,20 @@ namespace GenericHid
             // 
             // chart1
             // 
-            chartArea1.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea1.AxisX.ScaleView.SmallScrollMinSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea1.AxisX.ScaleView.SmallScrollSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea4.AxisX.ScaleView.SizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea4.AxisX.ScaleView.SmallScrollMinSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea4.AxisX.ScaleView.SmallScrollSizeType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(6, 171);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(585, 353);
             this.chart1.TabIndex = 62;
             this.chart1.Text = "chart1";
@@ -917,14 +931,14 @@ namespace GenericHid
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1154, 1039);
+            this.dataGridView1.Location = new System.Drawing.Point(877, 914);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(467, 276);
             this.dataGridView1.TabIndex = 61;
             // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(1576, 583);
+            this.trackBar5.Location = new System.Drawing.Point(1480, 530);
             this.trackBar5.Maximum = 100;
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -941,16 +955,66 @@ namespace GenericHid
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(691, 19);
+            this.label9.Location = new System.Drawing.Point(38, 132);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(28, 14);
             this.label9.TabIndex = 63;
             this.label9.Text = "USB";
             // 
+            // btnMonitor
+            // 
+            this.btnMonitor.Location = new System.Drawing.Point(534, 332);
+            this.btnMonitor.Name = "btnMonitor";
+            this.btnMonitor.Size = new System.Drawing.Size(154, 58);
+            this.btnMonitor.TabIndex = 64;
+            this.btnMonitor.Text = "USB Monitor";
+            this.btnMonitor.UseVisualStyleBackColor = true;
+            this.btnMonitor.Click += new System.EventHandler(this.btnMonitor_Click);
+            // 
+            // grpUsbStatus
+            // 
+            this.grpUsbStatus.Controls.Add(this.lblUsbIndicator);
+            this.grpUsbStatus.Controls.Add(this.lblUsbMessage);
+            this.grpUsbStatus.Controls.Add(this.label9);
+            this.grpUsbStatus.Controls.Add(this.lblUsbStatus);
+            this.grpUsbStatus.Location = new System.Drawing.Point(194, 849);
+            this.grpUsbStatus.Name = "grpUsbStatus";
+            this.grpUsbStatus.Size = new System.Drawing.Size(461, 334);
+            this.grpUsbStatus.TabIndex = 65;
+            this.grpUsbStatus.TabStop = false;
+            this.grpUsbStatus.Text = "USB Status";
+            // 
+            // lblUsbIndicator
+            // 
+            this.lblUsbIndicator.BackColor = System.Drawing.Color.DimGray;
+            this.lblUsbIndicator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblUsbIndicator.Location = new System.Drawing.Point(35, 157);
+            this.lblUsbIndicator.Name = "lblUsbIndicator";
+            this.lblUsbIndicator.Size = new System.Drawing.Size(22, 22);
+            this.lblUsbIndicator.TabIndex = 2;
+            // 
+            // lblUsbMessage
+            // 
+            this.lblUsbMessage.Location = new System.Drawing.Point(38, 92);
+            this.lblUsbMessage.Name = "lblUsbMessage";
+            this.lblUsbMessage.Size = new System.Drawing.Size(380, 40);
+            this.lblUsbMessage.TabIndex = 1;
+            this.lblUsbMessage.Text = "Waiting for device...";
+            // 
+            // lblUsbStatus
+            // 
+            this.lblUsbStatus.AutoSize = true;
+            this.lblUsbStatus.Location = new System.Drawing.Point(35, 45);
+            this.lblUsbStatus.Name = "lblUsbStatus";
+            this.lblUsbStatus.Size = new System.Drawing.Size(135, 14);
+            this.lblUsbStatus.TabIndex = 0;
+            this.lblUsbStatus.Text = "USB device not connected";
+            // 
             // FrmMain
             // 
             this.ClientSize = new System.Drawing.Size(1633, 1327);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.grpUsbStatus);
+            this.Controls.Add(this.btnMonitor);
             this.Controls.Add(this.trackBar5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
@@ -1020,6 +1084,8 @@ namespace GenericHid
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
+            this.grpUsbStatus.ResumeLayout(false);
+            this.grpUsbStatus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1043,8 +1109,14 @@ namespace GenericHid
 		private SendOrGet _sendOrGet;
 		private Boolean _transferInProgress;
 		private TransferTypes _transferType;
+		private FrmMonitor _monitorForm;
 
-        /*
+		private string _usbDeviceName = "unknown";
+		private string _usbManufacturer = "unknown";
+		private string _usbDeviceId = "unknown";
+		private string _usbClassGuid = "unknown";
+
+		/*
         /// <summary>
         /// for cpu testing chart- for tests only
         /// </summary>
@@ -1052,7 +1124,7 @@ namespace GenericHid
         private Thread cpuThread;
         private double[] cpuarray = new double[60];
         */
-        
+
 		private static System.Timers.Timer _periodicTransfers;
 
 		private readonly Debugging _myDebugging = new Debugging(); //  For viewing results of API calls via Debug.Write.
@@ -1179,7 +1251,7 @@ namespace GenericHid
 
 		private void AddDeviceArrivedHandler()
 		{
-			const Int32 pollingIntervalSeconds = 3;
+			const Int32 pollingIntervalSeconds = 1;
 			var scope = new ManagementScope("root\\CIMV2");
 			scope.Options.EnablePrivileges = true;
 
@@ -1208,7 +1280,7 @@ namespace GenericHid
 
 		private void AddDeviceRemovedHandler()
 		{
-			const Int32 pollingIntervalSeconds = 3;
+			const Int32 pollingIntervalSeconds = 1;
 			var scope = new ManagementScope("root\\CIMV2");
 			scope.Options.EnablePrivileges = true;
 
@@ -1619,9 +1691,11 @@ namespace GenericHid
 						//**************************//
 						if (_deviceHandleObtained)
 						{
-							label9.Text = "USB Device connected";
-							LstResults.Items.Add("USB device reconnected.");
-							ScrollToBottomOfListBox();
+//							label9.Text = "USB Device connected";
+//							LstResults.Items.Add("USB device reconnected.");
+//							AddUsbEvent("USB device connected");
+							AddUsbEvent("USB device reconnected");
+//							ScrollToBottomOfListBox();
 						}
 					}
 				});
@@ -1733,16 +1807,17 @@ namespace GenericHid
 
         private void DisplayReportData(Byte[] buffer, ReportTypes currentReportType, ReportReadOrWritten currentReadOrWritten)
 		{
+			/*
 			try
 			{
 				Int32 count;
 
-				LstResults.Items.Add(currentReportType.ToString() + " report has been " + currentReadOrWritten.ToString().ToLower() + ".");
+//				LstResults.Items.Add(currentReportType.ToString() + " report has been " + currentReadOrWritten.ToString().ToLower() + ".");
 
 				//  Display the report data received in the form's list box.
 
-				LstResults.Items.Add(" Report ID: " + String.Format("{0:X2} ", buffer[0]));
-				LstResults.Items.Add(" Report Data:");
+//				LstResults.Items.Add(" Report ID: " + String.Format("{0:X2} ", buffer[0]));
+//				LstResults.Items.Add(" Report Data:");
 
 				TxtBytesReceived.Text = "";
 
@@ -1766,6 +1841,7 @@ namespace GenericHid
 				DisplayException(Name, ex);
 				throw;
 			}
+			*/
 		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
@@ -1774,8 +1850,7 @@ namespace GenericHid
         /// 
         private void DisplayTransferInProgressMessage()
 		{
-			AccessForm(FormActions.AddItemToListBox, "Command not executed because a transfer is in progress.");
-			ScrollToBottomOfListBox();
+			AddUsbEvent("Command not executed because a transfer is in progress");
 		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
@@ -1841,6 +1916,14 @@ namespace GenericHid
 					if (queryObj["PNPDeviceID"].ToString().Contains(deviceIdString))
 					{
 						_deviceDetected = true;
+						_usbDeviceName = Convert.ToString(queryObj["Name"]);
+
+						_usbManufacturer = Convert.ToString(queryObj["Manufacturer"]);
+
+						_usbDeviceId = Convert.ToString(queryObj["DeviceID"]);
+
+						_usbClassGuid = Convert.ToString(queryObj["ClassGUID"]);
+						/*
 						MyMarshalDataToForm(FormActions.AddItemToListBox, "--------");
 						MyMarshalDataToForm(FormActions.AddItemToListBox, "My device found (WMI):");
 
@@ -1853,12 +1936,34 @@ namespace GenericHid
 						}
 						MyMarshalDataToForm(FormActions.AddItemToListBox, "--------");
 						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+						*/
+
+						AddUsbEvent("USB device found by WMI");
+
+						if (_monitorForm != null && !_monitorForm.IsDisposed)
+						{
+							_monitorForm.SetDeviceInfo(
+								_usbDeviceName,
+								_usbManufacturer,
+								_myVendorId,
+								_myProductId,
+								_usbDeviceId,
+								_usbClassGuid);
+						}
+
+						Debug.WriteLine("USB device found by WMI");
+
+						foreach (WmiDeviceProperties property in Enum.GetValues(typeof(WmiDeviceProperties)))
+						{
+							Debug.WriteLine(
+								property + ": " +
+								queryObj[property.ToString()]);
+						}
 					}
 				}
 				if (!_deviceDetected)
 				{
-					MyMarshalDataToForm(FormActions.AddItemToListBox, "My device not found (WMI)");
-					MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+					Debug.WriteLine("My device not found (WMI)");
 				}
 				return _deviceDetected;
 			}
@@ -1943,13 +2048,22 @@ namespace GenericHid
 									Debug.WriteLine("  Handle obtained to my device");
 
 									//  Display the information in form's list box.
-
+									/*
 									MyMarshalDataToForm(FormActions.AddItemToListBox, "Handle obtained to my device:");
 									MyMarshalDataToForm(FormActions.AddItemToListBox, "  Vendor ID= " + Convert.ToString(_myHid.DeviceAttributes.VendorID, 16));
 									MyMarshalDataToForm(FormActions.AddItemToListBox, "  Product ID = " + Convert.ToString(_myHid.DeviceAttributes.ProductID, 16));
-									MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+									*/
+									AddUsbEvent("HID handle opened, VID=" +	_myVendorId.ToString("X4") + " PID=" + _myProductId.ToString("X4"));
+//									MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
 
 									_deviceHandleObtained = true;
+
+									SetUsbStatus(
+										"USB device connected",
+										"VID: " + _myVendorId.ToString("X4") +
+										"  PID: " + _myProductId.ToString("X4"),
+										Color.LimeGreen
+									);
 
 									myDevicePathName = devicePathName[memberIndex];
 								}
@@ -2000,6 +2114,7 @@ namespace GenericHid
 
 					_hidHandle = _myHid.OpenHandle(myDevicePathName, true);
 
+
 					if (_hidHandle.IsInvalid)
 					{
 						MyMarshalDataToForm(FormActions.AddItemToListBox, "The device is a system " + _hidUsage + ".");
@@ -2025,11 +2140,18 @@ namespace GenericHid
 						//  Flush any waiting reports in the input buffer. (optional)
 
 						_myHid.FlushQueue(_hidHandle);
+
+						SetUsbStatus("USB device connected", "VID: " + _myVendorId.ToString("X4") + "  PID: " + _myProductId.ToString("X4"), Color.LimeGreen);
 					}
 				}
 				else
 				{
 					MyMarshalDataToForm(FormActions.AddItemToListBox, "Device not found.");
+					SetUsbStatus(
+                        "USB device not connected",
+                        "Waiting for device...",
+                        indicatorColor: Color.DimGray);
+
 					MyMarshalDataToForm(FormActions.DisableInputReportBufferSize, "");
 					EnableFormControls();
 					MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
@@ -2079,6 +2201,10 @@ namespace GenericHid
 				FrmMy = this;
 				Startup();
 				StartUsbPollingAutomatically();
+				if (_deviceHandleObtained)
+				{
+					AddUsbEvent("USB device connected");
+				}
 			}
 			catch (Exception ex)
 			{
@@ -2207,10 +2333,10 @@ namespace GenericHid
 				cmdInputReportBufferSize.Focus();
 				cmdInputReportBufferSize.Enabled = false;
 
-				LstResults.Items.Add("For a more detailed event log, view debug statements in Visual Studio's Output window:");
-				LstResults.Items.Add("Click Build > Configuration Manager > Active Solution Configuration > Debug > Close.");
-				LstResults.Items.Add("Then click View > Output.");
-				LstResults.Items.Add("");
+//				LstResults.Items.Add("For a more detailed event log, view debug statements in Visual Studio's Output window:");
+//				LstResults.Items.Add("Click Build > Configuration Manager > Active Solution Configuration > Debug > Close.");
+//				LstResults.Items.Add("Then click View > Output.");
+//				LstResults.Items.Add("");
 			}
 			catch (Exception ex)
 			{
@@ -2247,29 +2373,47 @@ namespace GenericHid
 				throw;
 			}
 		}
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Timeout if read via interrupt transfer doesn't return.
-        /// </summary>
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// <summary>
+		/// Timeout if read via interrupt transfer doesn't return.
+		/// </summary>
 
-        private void OnReadTimeout()
+		/*        private void OnReadTimeout()
+				{
+					try
+					{
+						MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read a report timed out.");
+						MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+						CloseCommunications();
+						MyMarshalDataToForm(FormActions.EnableGetInputReportInterruptTransfer, "");
+						_transferInProgress = false;
+						_sendOrGet = SendOrGet.Send;
+					}
+					catch (Exception ex)
+					{
+						DisplayException(Name, ex);
+						throw;
+					}
+				}
+		*/
+		private void OnReadTimeout()
 		{
 			try
 			{
-				MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read a report timed out.");
-				MyMarshalDataToForm(FormActions.ScrollToBottomOfListBox, "");
+				AddUsbEvent("Read timeout");
+
 				CloseCommunications();
-				MyMarshalDataToForm(FormActions.EnableGetInputReportInterruptTransfer, "");
+
+				MyMarshalDataToForm(FormActions.EnableGetInputReportInterruptTransfer,"");
+
 				_transferInProgress = false;
 				_sendOrGet = SendOrGet.Send;
 			}
 			catch (Exception ex)
 			{
-				DisplayException(Name, ex);
-				throw;
+				Debug.WriteLine("OnReadTimeout: " + ex.Message);
 			}
 		}
-
 		/// <summary>
 		/// Timeout if write via interrupt transfer doesn't return.
 		/// </summary>
@@ -2458,14 +2602,16 @@ namespace GenericHid
 						else
 						{
 							CloseCommunications();
-							MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read a Feature report failed.");
-							ScrollToBottomOfListBox();
+//							MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read a Feature report failed.");
+//							ScrollToBottomOfListBox();
+							AddUsbEvent("Failed to read Feature report");
 						}
 					}
 					else
 					{
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have a Feature report.");
-						ScrollToBottomOfListBox();
+//						MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have a Feature report.");
+//						ScrollToBottomOfListBox();
+						AddUsbEvent("HID has no Feature report");
 					}
 				}
 				_transferInProgress = false;
@@ -2485,7 +2631,7 @@ namespace GenericHid
 
         private async void RequestToGetInputReport()
 		{
-			const Int32 readTimeout = 5000;
+			const Int32 readTimeout = 500;
 
 			String byteValue = null;
 			Byte[] inputReportBuffer = null;
@@ -2543,7 +2689,8 @@ namespace GenericHid
 									//  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
 
 									// Create a delegate to execute on a timeout.
-
+									///////////////////////////////////////////////////////////////////////////////////
+									/*
 									Action onReadTimeoutAction = OnReadTimeout;
 
 									// The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
@@ -2567,6 +2714,21 @@ namespace GenericHid
 									// Dispose to stop the timeout timer. 
 
 									cts.Dispose();
+									*/
+
+									Int32 bytesRead;
+
+									using (var cts = new CancellationTokenSource())
+									{
+										cts.CancelAfter(readTimeout);
+
+										bytesRead =
+											await _myHid.GetInputReportViaInterruptTransfer(
+												_deviceData,
+												inputReportBuffer,
+												cts);
+									}
+									///////////////////////////////////////////////////////////////////////////////////
 
 									_transferInProgress = false;
 									cmdGetInputReportInterrupt.Enabled = true;
@@ -2581,14 +2743,16 @@ namespace GenericHid
 						}
 						else
 						{
-							MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
-							MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
+//							MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to read an Input report was made.");
+//							MyMarshalDataToForm(FormActions.AddItemToListBox, "The HID doesn't have an Input report.");
+							AddUsbEvent("HID has no Input report");
 						}
 					}
 					else
 					{
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to write an Output report or read an Input report was made.");
+//						MyMarshalDataToForm(FormActions.AddItemToListBox, "Invalid handle.");
+//						MyMarshalDataToForm(FormActions.AddItemToListBox, "No attempt to write an Output report or read an Input report was made.");
+						AddUsbEvent("Invalid HID handle");
 					}
 
 					if (success)
@@ -2598,8 +2762,9 @@ namespace GenericHid
 					else
 					{
 						CloseCommunications();
-						MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-						ScrollToBottomOfListBox();
+//						MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
+//						ScrollToBottomOfListBox();
+						AddUsbEvent("Failed to read Input report");
 					}
 				}
 			}
@@ -2612,6 +2777,10 @@ namespace GenericHid
 			}
 			*/
 			//****************************************************************************************//
+			catch (OperationCanceledException)
+			{
+				HandleUsbDisconnect("Read timeout");
+			}
 			catch (IOException ex)
 			{
 				HandleUsbDisconnect(ex.Message);
@@ -2690,21 +2859,23 @@ namespace GenericHid
 						else
 						{
 							CloseCommunications();
-							AccessForm(FormActions.AddItemToListBox, "The attempt to send a Feature report failed.");
-							ScrollToBottomOfListBox();
+//							AccessForm(FormActions.AddItemToListBox, "The attempt to send a Feature report failed.");
+//							ScrollToBottomOfListBox();
+							AddUsbEvent("Failed to send Feature report");
 						}
 					}
 
 					else
 					{
-						AccessForm(FormActions.AddItemToListBox, "The HID doesn't have a Feature report.");
-						ScrollToBottomOfListBox();
+//						AccessForm(FormActions.AddItemToListBox, "The HID doesn't have a Feature report.");
+//						ScrollToBottomOfListBox();
+						AddUsbEvent("HID has no Feature report");
 					}
 
 				}
 				_transferInProgress = false;
 				cmdSendFeatureReport.Enabled = true;
-				ScrollToBottomOfListBox();
+//				ScrollToBottomOfListBox();
 
 			}
 			catch (Exception ex)
@@ -2721,7 +2892,7 @@ namespace GenericHid
 
         private async void RequestToSendOutputReport()
 		{
-			const Int32 writeTimeout = 5000;
+			const Int32 writeTimeout = 500;
 			String byteValue = null;
 
 			try
@@ -2763,7 +2934,7 @@ namespace GenericHid
                         outputReportBuffer[2] = Convert.ToByte(trackBar1.Value);
                         outputReportBuffer[3] = Convert.ToByte(trackBar2.Value);
                         outputReportBuffer[4] = Convert.ToByte(trackBar3.Value);
-
+						/*
 						LstResults.Items.Add(
 						$"TX: {outputReportBuffer[0]:X2} " +
 						$"{outputReportBuffer[1]:X2} " +
@@ -2772,10 +2943,15 @@ namespace GenericHid
 						$"{outputReportBuffer[4]:X2}"
 						);
 						ScrollToBottomOfListBox();
-
+						*/
 						if (outputReportBuffer.GetUpperBound(0) > 1)
 						{
 							outputReportBuffer[5] = Convert.ToByte(CboByte1.SelectedIndex);
+						}
+
+						if (_monitorForm != null && !_monitorForm.IsDisposed)
+						{
+							_monitorForm.ShowTx(outputReportBuffer);
 						}
 
 						//  Write a report.
@@ -2802,7 +2978,8 @@ namespace GenericHid
 							_transferInProgress = true;
 
 							// The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
-
+							//////////////////////////////////////////////////////////////////////////////////////////
+							/*
 							var cts = new CancellationTokenSource();
 
 							// Create a delegate to execute on a timeout.
@@ -2829,6 +3006,22 @@ namespace GenericHid
 							// Dispose to stop the timeout timer.
 
 							cts.Dispose();
+							*/
+							using (var cts = new CancellationTokenSource())
+							{
+								cts.CancelAfter(writeTimeout);
+
+								success =
+									await _myHid.SendOutputReportViaInterruptTransfer(
+										_deviceData,
+										_hidHandle,
+										outputReportBuffer,
+										cts);
+							}
+
+							_transferInProgress = false;
+							cmdSendOutputReportInterrupt.Enabled = true;
+							//////////////////////////////////////////////////////////////////////////////////////////
 						}
 						if (success)
 						{
@@ -2837,8 +3030,10 @@ namespace GenericHid
 						else
 						{
 							CloseCommunications();
-							AccessForm(FormActions.AddItemToListBox, "The attempt to write an Output report failed.");
-							ScrollToBottomOfListBox();
+							//                        MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
+//							AddUsbEvent("Failed to read Input report");
+							AddUsbEvent("Failed to send Output report");
+							//                        ScrollToBottomOfListBox();
 						}
 					}
 				}
@@ -2854,15 +3049,15 @@ namespace GenericHid
 				throw;
 			}*/
 			//******************************************************************************************//
+			catch (OperationCanceledException)
+			{
+				HandleUsbDisconnect("Write timeout");
+			}
 			catch (IOException ex)
 			{
 				HandleUsbDisconnect(ex.Message);
 			}
 			catch (ObjectDisposedException ex)
-			{
-				HandleUsbDisconnect(ex.Message);
-			}
-			catch (UnauthorizedAccessException ex)
 			{
 				HandleUsbDisconnect(ex.Message);
 			}
@@ -3383,12 +3578,13 @@ namespace GenericHid
                                 {
                                     _transferInProgress = true;
 
-                                    //  Read a report using interrupt transfers. 
-                                    //  Timeout if no report available.
-                                    //  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
+									//  Read a report using interrupt transfers. 
+									//  Timeout if no report available.
+									//  To enable reading a report without blocking the calling thread, uses Filestream's ReadAsync method.                                               
 
-                                    // Create a delegate to execute on a timeout.
-
+									// Create a delegate to execute on a timeout.
+									///////////////////////////////////////////////////////////////////////////////////////////////////////
+									/*
                                     Action onReadTimeoutAction = OnReadTimeout;
 
                                     // The CancellationTokenSource specifies the timeout value and the action to take on a timeout.
@@ -3411,9 +3607,25 @@ namespace GenericHid
 
                                     // Dispose to stop the timeout timer. 
 
-                                    cts.Dispose();
+                                    cts.Dispose();*/
+									///////////////////////////////////////////////////////////////////////////////////////////////////////
+									Int32 bytesRead;
 
-                                    _transferInProgress = false;
+									using (var cts = new CancellationTokenSource())
+									{
+										cts.CancelAfter(readTimeout);
+
+										bytesRead =
+											await _myHid.GetInputReportViaInterruptTransfer(
+												_deviceData,
+												inputReportBuffer,
+												cts);
+									}
+
+
+
+
+									_transferInProgress = false;
                                     cmdGetInputReportInterrupt.Enabled = true;
 
                                     if (bytesRead > 0)
@@ -3439,9 +3651,15 @@ namespace GenericHid
                     if (success)
                     {
 
-                        ///////////////////////тута можно чо то делать
+						///////////////////////тута можно чо то делать
 
-                        Int32 temp = 0;
+
+						if (_monitorForm != null && !_monitorForm.IsDisposed)
+						{
+							_monitorForm.ShowRx(inputReportBuffer);
+						}
+
+						Int32 temp = 0;
                         Int32 pres = 0;
 
                         temp = (inputReportBuffer[6] << 24) | (inputReportBuffer[7] << 16) | (inputReportBuffer[8] << 8) | inputReportBuffer[9];
@@ -3449,14 +3667,19 @@ namespace GenericHid
                         
                         label5.Text = temp.ToString();
                         label6.Text = pres.ToString();
-                        //label6.Text = (pres/100)(".")(pres % 100).ToString();
-                    }
+						//label6.Text = (pres/100)(".")(pres % 100).ToString();
+
+
+
+
+					}
                     else
                     {
                         CloseCommunications();
-                        MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
-                        ScrollToBottomOfListBox();
-                    }
+//                        MyMarshalDataToForm(FormActions.AddItemToListBox, "The attempt to read an Input report has failed.");
+						AddUsbEvent("Failed to read Input report");
+//                        ScrollToBottomOfListBox();
+					}
                 }
             }
 
@@ -3468,6 +3691,11 @@ namespace GenericHid
                 throw;
             }*/
 			//******************************************************************************************//
+
+			catch (OperationCanceledException)
+			{
+				HandleUsbDisconnect("Read timeout");
+			}
 
 			catch (IOException ex)
 			{
@@ -3532,42 +3760,42 @@ namespace GenericHid
 
 		private void TrackBar_Send_MouseUp(object sender, MouseEventArgs e)
 		{
-			LstResults.Items.Add("MouseUp entered");
+//			LstResults.Items.Add("MouseUp entered");
 
 			if (_transferInProgress)
 			{
-				LstResults.Items.Add("MouseUp blocked: transfer already in progress");
-				ScrollToBottomOfListBox();
+				AddUsbEvent("MouseUp blocked: transfer already in progress");
+//				ScrollToBottomOfListBox();
 				return;
 			}
 
 			if (!_deviceHandleObtained)
 			{
-				LstResults.Items.Add("MouseUp blocked: device handle not obtained");
-				ScrollToBottomOfListBox();
+				AddUsbEvent("MouseUp blocked: device handle not obtained");
+//				ScrollToBottomOfListBox();
 				return;
 			}
 
 			if (_hidHandle == null)
 			{
-				LstResults.Items.Add("MouseUp blocked: HID handle is null");
-				ScrollToBottomOfListBox();
+				AddUsbEvent("MouseUp blocked: HID handle is null");
+//				ScrollToBottomOfListBox();
 				return;
 			}
 
 			if (_hidHandle.IsInvalid || _hidHandle.IsClosed)
 			{
-				LstResults.Items.Add("MouseUp blocked: HID handle is invalid or closed");
-				ScrollToBottomOfListBox();
+				AddUsbEvent("MouseUp blocked: HID handle is invalid or closed");
+				//				ScrollToBottomOfListBox();
 				return;
 			}
 
-			LstResults.Items.Add("MouseUp: sending Output report");
+//			LstResults.Items.Add("MouseUp: sending Output report");
 
 			_transferType = TransferTypes.Interrupt;
 			RequestToSendOutputReport();
 
-			ScrollToBottomOfListBox();
+//			ScrollToBottomOfListBox();
 		}
 
 
@@ -3575,6 +3803,15 @@ namespace GenericHid
 		{
 			try
 			{
+				bool wasConnected =	_deviceDetected || _deviceHandleObtained || (_hidHandle != null && !_hidHandle.IsInvalid && !_hidHandle.IsClosed);
+
+				if (!wasConnected)
+				{
+					Debug.WriteLine(
+						"Duplicate USB disconnect ignored: " + reason);
+
+					return;
+				}
 				_deviceDetected = false;
 				_deviceHandleObtained = false;
 				_transferInProgress = false;
@@ -3586,10 +3823,8 @@ namespace GenericHid
 
 				CloseCommunications();
 
-				LstResults.Items.Add("USB disconnected: " + reason);
-				ScrollToBottomOfListBox();
-
-				label9.Text = "USB Device not connected";
+				SetUsbStatus("USB device not connected", "USB disconnected: " + reason, Color.DimGray);
+				AddUsbEvent("USB device disconnected (" + reason + ")");
 
 				EnableFormControls();
 			}
@@ -3630,17 +3865,77 @@ namespace GenericHid
 				return;
 			}
 
+			_transferInProgress = false;
+			_periodicTransfersRequested = false;
+
+			if (_periodicTransfers != null)
+			{
+				_periodicTransfers.Stop();
+			}
+
 			if (_periodicTransfersRequested)
 			{
 				return;
 			}
 
+
 			radInputOutputInterrupt.Checked = true;
+			_transferType = TransferTypes.Interrupt;
+			_reportType = ReportTypes.Output;
 			_sendOrGet = SendOrGet.Send;
 
 			PeriodicTransfersStart();
 		}
 
+		private void btnMonitor_Click(object sender, EventArgs e)
+		{
+			if (_monitorForm == null || _monitorForm.IsDisposed)
+			{
+				_monitorForm = new FrmMonitor();
+				_monitorForm.Show(this);
+				_monitorForm.SetDeviceInfo(
+				_usbDeviceName,
+				_usbManufacturer,
+				_myVendorId,
+				_myProductId,
+				_usbDeviceId,
+				_usbClassGuid);
+			}
+			else
+			{
+				_monitorForm.BringToFront();
+				_monitorForm.Activate();
+			}
+		}
+
+		private void SetUsbStatus(string status, string message, Color indicatorColor)
+		{
+			if (InvokeRequired)
+			{
+				BeginInvoke(new Action<string, string, Color>(
+					SetUsbStatus),
+					status,
+					message,
+					indicatorColor);
+
+				return;
+			}
+
+			lblUsbStatus.Text = status;
+			lblUsbMessage.Text = message;
+			lblUsbIndicator.BackColor = indicatorColor;
+        }
+
+		private void AddUsbEvent(string message)
+		{
+			Debug.WriteLine(message);
+
+			if (_monitorForm != null && !_monitorForm.IsDisposed)
+			{
+				_monitorForm.AddEvent(message);
+			}
+		}
 
 	}
+
 }

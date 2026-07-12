@@ -132,6 +132,9 @@
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GenericHid.cs" />
     <Compile Include="Hid.cs" />
     <Compile Include="HidDeclarations.cs" />
@@ -147,9 +150,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmMain.resX">
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMonitor.resx">
+      <DependentUpon>FrmMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>

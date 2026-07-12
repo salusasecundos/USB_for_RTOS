@@ -439,7 +439,7 @@ namespace GenericHid
 			}
 			catch (Exception ex)
 			{
-				DisplayException(ModuleName, ex);
+//				DisplayException(ModuleName, ex);
 				throw;
 			}
 		}
@@ -691,7 +691,7 @@ namespace GenericHid
 			}
 			catch (Exception ex)
 			{
-				DisplayException(ModuleName, ex);
+//				DisplayException(ModuleName, ex);
 				throw;
 			}
 		}
