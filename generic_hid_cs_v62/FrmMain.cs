@@ -751,7 +751,6 @@ namespace GenericHid
 		{
 			try
 			{
-
 			}
 			catch (Exception ex)
 			{
@@ -957,15 +956,6 @@ namespace GenericHid
 			try
 			{
 				Debug.WriteLine("A USB device has been removed");
-				/*
-				_deviceDetected = FindDeviceUsingWmi();
-
-				if (!_deviceDetected)
-				{
-					_deviceHandleObtained = false;
-					CloseCommunications();
-				}
-				*/
 				BeginInvoke((MethodInvoker)delegate
 				{
 					HandleUsbDisconnect("device removed");
@@ -975,8 +965,6 @@ namespace GenericHid
 			catch (Exception ex)
 			{
 				Debug.WriteLine("DeviceRemoved error: " + ex.Message);
-//				DisplayException(Name, ex);
-//				throw;
 			}
 		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1031,7 +1019,6 @@ namespace GenericHid
         /// 
         private void EnableFormControls()
 		{
-//			cmdPeriodicTransfers.Enabled = true;
 		}
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///  <summary>
@@ -1620,7 +1607,6 @@ namespace GenericHid
 
 				if (_deviceHandleObtained)
 				{
-//					GetBytesToSend();
 				}
 				//  Don't attempt to exchange reports if valid handles aren't available
 				//  (as for a mouse or keyboard.)
@@ -2053,7 +2039,7 @@ namespace GenericHid
                     if (success)
                     {
 
-						///////////////////////тута можно чо то делать
+						///////////////////////пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 
 						if (_monitorForm != null && !_monitorForm.IsDisposed)
