@@ -277,9 +277,9 @@ namespace GenericHid
             // 
             // btnMonitor
             // 
-            this.btnMonitor.Location = new System.Drawing.Point(221, 156);
+            this.btnMonitor.Location = new System.Drawing.Point(63, 157);
             this.btnMonitor.Name = "btnMonitor";
-            this.btnMonitor.Size = new System.Drawing.Size(119, 30);
+            this.btnMonitor.Size = new System.Drawing.Size(119, 22);
             this.btnMonitor.TabIndex = 64;
             this.btnMonitor.Text = "USB Monitor";
             this.btnMonitor.UseVisualStyleBackColor = true;
@@ -288,21 +288,21 @@ namespace GenericHid
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(877, 297);
+            this.comboBox1.Location = new System.Drawing.Point(31, 498);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(128, 22);
             this.comboBox1.TabIndex = 39;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(877, 37);
+            this.numericUpDown1.Location = new System.Drawing.Point(31, 238);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown1.TabIndex = 40;
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(1033, 37);
+            this.trackBar1.Location = new System.Drawing.Point(187, 238);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(413, 45);
@@ -312,7 +312,7 @@ namespace GenericHid
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(1033, 115);
+            this.trackBar2.Location = new System.Drawing.Point(187, 316);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(413, 45);
@@ -322,7 +322,7 @@ namespace GenericHid
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(1033, 192);
+            this.trackBar3.Location = new System.Drawing.Point(187, 393);
             this.trackBar3.Maximum = 100;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Size = new System.Drawing.Size(413, 45);
@@ -334,9 +334,9 @@ namespace GenericHid
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.chart1);
-            this.groupBox1.Location = new System.Drawing.Point(877, 378);
+            this.groupBox1.Location = new System.Drawing.Point(659, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(597, 413);
+            this.groupBox1.Size = new System.Drawing.Size(896, 779);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driver";
@@ -367,7 +367,7 @@ namespace GenericHid
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(585, 353);
+            this.chart1.Size = new System.Drawing.Size(884, 713);
             this.chart1.TabIndex = 62;
             this.chart1.Text = "chart1";
             // 
@@ -385,7 +385,7 @@ namespace GenericHid
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(388, 123);
+            this.label7.Location = new System.Drawing.Point(388, 117);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 45);
             this.label7.TabIndex = 66;
@@ -395,7 +395,7 @@ namespace GenericHid
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(388, 65);
+            this.label6.Location = new System.Drawing.Point(388, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 45);
             this.label6.TabIndex = 65;
@@ -405,7 +405,7 @@ namespace GenericHid
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(377, 16);
+            this.label5.Location = new System.Drawing.Point(388, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 45);
             this.label5.TabIndex = 64;
@@ -415,7 +415,7 @@ namespace GenericHid
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1452, 43);
+            this.label1.Location = new System.Drawing.Point(606, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 32);
             this.label1.TabIndex = 46;
@@ -425,7 +425,7 @@ namespace GenericHid
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1452, 121);
+            this.label2.Location = new System.Drawing.Point(606, 322);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 32);
             this.label2.TabIndex = 47;
@@ -435,7 +435,7 @@ namespace GenericHid
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1452, 200);
+            this.label3.Location = new System.Drawing.Point(606, 401);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 32);
             this.label3.TabIndex = 48;
@@ -443,70 +443,70 @@ namespace GenericHid
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(877, 63);
+            this.numericUpDown2.Location = new System.Drawing.Point(31, 264);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown2.TabIndex = 49;
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(877, 89);
+            this.numericUpDown3.Location = new System.Drawing.Point(31, 290);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown3.TabIndex = 50;
             // 
             // numericUpDown4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(877, 115);
+            this.numericUpDown4.Location = new System.Drawing.Point(31, 316);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown4.TabIndex = 51;
             // 
             // numericUpDown5
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(877, 141);
+            this.numericUpDown5.Location = new System.Drawing.Point(31, 342);
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown5.TabIndex = 52;
             // 
             // numericUpDown6
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(877, 167);
+            this.numericUpDown6.Location = new System.Drawing.Point(31, 368);
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown6.TabIndex = 53;
             // 
             // numericUpDown7
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(877, 193);
+            this.numericUpDown7.Location = new System.Drawing.Point(31, 394);
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown7.TabIndex = 54;
             // 
             // numericUpDown8
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(877, 219);
+            this.numericUpDown8.Location = new System.Drawing.Point(31, 420);
             this.numericUpDown8.Name = "numericUpDown8";
             this.numericUpDown8.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown8.TabIndex = 55;
             // 
             // numericUpDown9
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(877, 245);
+            this.numericUpDown9.Location = new System.Drawing.Point(31, 446);
             this.numericUpDown9.Name = "numericUpDown9";
             this.numericUpDown9.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown9.TabIndex = 56;
             // 
             // numericUpDown10
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(877, 271);
+            this.numericUpDown10.Location = new System.Drawing.Point(31, 472);
             this.numericUpDown10.Name = "numericUpDown10";
             this.numericUpDown10.Size = new System.Drawing.Size(128, 20);
             this.numericUpDown10.TabIndex = 57;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(877, 335);
+            this.progressBar1.Location = new System.Drawing.Point(31, 536);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(569, 31);
             this.progressBar1.Step = 1;
@@ -515,7 +515,7 @@ namespace GenericHid
             // 
             // trackBar4
             // 
-            this.trackBar4.Location = new System.Drawing.Point(1033, 260);
+            this.trackBar4.Location = new System.Drawing.Point(187, 461);
             this.trackBar4.Maximum = 100;
             this.trackBar4.Name = "trackBar4";
             this.trackBar4.Size = new System.Drawing.Size(413, 45);
@@ -526,7 +526,7 @@ namespace GenericHid
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1452, 260);
+            this.label4.Location = new System.Drawing.Point(606, 461);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 32);
             this.label4.TabIndex = 60;
@@ -534,11 +534,11 @@ namespace GenericHid
             // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(1480, 378);
+            this.trackBar5.Location = new System.Drawing.Point(1561, 39);
             this.trackBar5.Maximum = 100;
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar5.Size = new System.Drawing.Size(45, 413);
+            this.trackBar5.Size = new System.Drawing.Size(45, 760);
             this.trackBar5.TabIndex = 62;
             this.trackBar5.Value = 15;
             this.trackBar5.Scroll += new System.EventHandler(this.trackBar5_Scroll);
@@ -566,7 +566,7 @@ namespace GenericHid
             this.grpUsbStatus.Controls.Add(this.lblUsbStatus);
             this.grpUsbStatus.Location = new System.Drawing.Point(12, 16);
             this.grpUsbStatus.Name = "grpUsbStatus";
-            this.grpUsbStatus.Size = new System.Drawing.Size(346, 197);
+            this.grpUsbStatus.Size = new System.Drawing.Size(358, 197);
             this.grpUsbStatus.TabIndex = 65;
             this.grpUsbStatus.TabStop = false;
             this.grpUsbStatus.Text = "USB Status";
@@ -584,7 +584,7 @@ namespace GenericHid
             // 
             this.lblUsbMessage.Location = new System.Drawing.Point(38, 92);
             this.lblUsbMessage.Name = "lblUsbMessage";
-            this.lblUsbMessage.Size = new System.Drawing.Size(380, 40);
+            this.lblUsbMessage.Size = new System.Drawing.Size(314, 40);
             this.lblUsbMessage.TabIndex = 1;
             this.lblUsbMessage.Text = "Waiting for device...";
             // 
@@ -2063,13 +2063,22 @@ namespace GenericHid
 
 						Int32 temp = 0;
                         Int32 pres = 0;
-
-                        temp = (inputReportBuffer[6] << 24) | (inputReportBuffer[7] << 16) | (inputReportBuffer[8] << 8) | inputReportBuffer[9];
+						Int32 hum = 0;
+						/*
+						temp = (inputReportBuffer[6] << 24) | (inputReportBuffer[7] << 16) | (inputReportBuffer[8] << 8) | inputReportBuffer[9];
                         pres = (inputReportBuffer[10] << 24) | (inputReportBuffer[11] << 16) | (inputReportBuffer[12] << 8) | inputReportBuffer[13];
-                        
-                        label5.Text = temp.ToString();
+						hum = (inputReportBuffer[14] << 24) | (inputReportBuffer[15] << 16) | (inputReportBuffer[16] << 8) | inputReportBuffer[17];
+						*/
+
+						temp = (inputReportBuffer[6] | (inputReportBuffer[7] << 8) | (inputReportBuffer[8] << 16) | (inputReportBuffer[9] << 24));
+						pres = (inputReportBuffer[10] | (inputReportBuffer[11] << 8) | (inputReportBuffer[12] << 16) | (inputReportBuffer[13] << 24));
+						hum = inputReportBuffer[14] | (inputReportBuffer[15] << 8) | (inputReportBuffer[16] << 16) | (inputReportBuffer[17] << 24);
+
+
+
+						label5.Text = temp.ToString();
                         label6.Text = pres.ToString();
-						//label6.Text = (pres/100)(".")(pres % 100).ToString();
+						label7.Text = hum.ToString();	//(pres/100)(".")(pres % 100).ToString();
 
 					}
                     else
